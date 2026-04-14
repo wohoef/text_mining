@@ -29,38 +29,38 @@ Deadlines:
 
 [Assign your roles here]
 Project Update 0 - April 14
-Repository and README [Everyone]
+- Repository and README [Everyone]
 
 Project Update 1 - April 28
-Decide on CSS/AI determining structures, based on literature [Melle]
-Decide on model and have it tested on preliminary dataset [Wout]
-Find final dataset [Jonathan]
-Decides on tests run:
-What time frame (Texts published from when to when)
-What academic fields (Computer Science, Chemistry, Politics…)
-What sources (Academic papers and from where)
-What amount (& dataset breakdown: ie x papers separated into y academic fields and z years)
-Data gathering and preprocessing pipeline [Melle]
+- Decide on CSS/AI determining structures, based on literature [Melle]
+- Decide on model and have it tested on preliminary dataset [Wout]
+- Find final dataset [Jonathan]
+- Decides on tests run:
+- What time frame (Texts published from when to when)
+- What academic fields (Computer Science, Chemistry, Politics…)
+- What sources (Academic papers and from where)
+- What amount (& dataset breakdown: ie x papers separated into y academic fields and z years)
+- Data gathering and preprocessing pipeline [Melle]
 
 Project Update 2 - May 8
-Run models on the full dataset and gather results[Melle & Leticia]
-Analyze results and create base for the report [Jonathan]
+- Run models on the full dataset and gather results[Melle & Leticia]
+- Analyze results and create base for the report [Jonathan]
 
 Inclass Presentations - May 19/22
-Presentation prepared [Everyone]
-First draft of the report done
-Abstract [Jonathan]
-Introduction [Leticia] 
-Related work
-Data collection
-Dataset description with summary statistics
-Methods with math and description of main algorithms [Leticia &...]
-Results and findings [Jonathan]
-Conclusions [Jonathan]
+- Presentation prepared [Everyone]
+- First draft of the report done
+- Abstract [Jonathan]
+- Introduction [Leticia] 
+- Related work
+- Data collection
+- Dataset description with summary statistics
+- Methods with math and description of main algorithms [Leticia &...]
+- Results and findings [Jonathan]
+- Conclusions [Jonathan]
 
 Final Deadline - May 22
-Implement feedback to report and code
-Clean up the repository and the report
+- Implement feedback to report and code
+- Clean up the repository and the report
 
 ## Documentation
 This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
