@@ -1,15 +1,12 @@
 # Project Readme
 
 ## Title
-Are we cooked: Sentence structures in human and AI writing
+Are we cooked: Sentence Structures in Human and AI Writing
 
 ## Abstract
-A max 150-word description of the project question or idea, goals, dataset used. What story would you like to tell and why? What's the motivation behind your project?
-
 The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain sentence structures are used more frequently since the widespread adoption of LLMs. Specifically, we will look at the antithesis, where in a single sentence two opposing ideas are introduced for a contrasting effect. Using the arXiv dataset, we will extract multiple scientific texts to determine if there is a correlation between the use of this antithesis structure and the increasing use of LLMs.
 
 ## Research questions
-A list of research questions you would like to address during the project. 
 - Is there a correlation between the use of LLMs and the frequency of the antithesis is writing and speaking? 
 - Which scientific fields have seen a bigger increase in the use of the antithesis since the launch of LLMs? 
 - Which discourse types (news articles, reddit comments, scientific articles etc) have seen a bigger increase in the use of the antithesis? 
@@ -17,17 +14,10 @@ A list of research questions you would like to address during the project.
 - (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
 
 ## Dataset
-List the dataset(s) you want to use, and some ideas on how you expect to get, manage, process and enrich it/them. Show you've read the docs and are familiar with some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.:
-
 We use the arXiv dataset, taking the full text of each paper. We focus on English papers from a few years before and after the ChatGPT release, sampled evenly across fields rather than using everything published. We will have to clean the text of irrelevant elements (ie latex formatting, page numbers, works cited, etc). From each paper we pull two things: vocabulary features (lemma frequencies, type-token ratios, and rates for a curated list of suspected AI-tell words like delve, tapestry, intricate and multifaceted) and construction features (a parser pass that flags the "it's not X, it's Y" family).
 
 
-## A tentative list of milestones for the project
-Add here a sketch of your planning for the coming weeks. Please mention who does what.
-
-Deadlines:
-
-[Assign your roles here]
+## A Tentative List of Milestones
 Project Update 0 - April 14
 - Repository and README [Everyone]
 
@@ -54,7 +44,7 @@ Inclass Presentations - May 19/22
 - Related work
 - Data collection
 - Dataset description with summary statistics
-- Methods with math and description of main algorithms [Leticia &...]
+- Methods with math and description of main algorithms [Leticia]
 - Results and findings [Jonathan]
 - Conclusions [Jonathan]
 
