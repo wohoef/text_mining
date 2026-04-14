@@ -10,11 +10,11 @@ The introduction of Large Language Models (LLMs) has raised questions about thei
 
 ## Research questions
 A list of research questions you would like to address during the project. 
-Is there a correlation between the use of LLMs and the frequency of the antithesis is writing and speaking? 
-Which scientific fields have seen a bigger increase in the use of the antithesis since the launch of LLMs? 
-Which discourse types (news articles, reddit comments, scientific articles etc) have seen a bigger increase in the use of the antithesis? 
-What are characteristic sentence structures (CSS) generally used by generative AI? 
-(discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
+- Is there a correlation between the use of LLMs and the frequency of the antithesis is writing and speaking? 
+- Which scientific fields have seen a bigger increase in the use of the antithesis since the launch of LLMs? 
+- Which discourse types (news articles, reddit comments, scientific articles etc) have seen a bigger increase in the use of the antithesis? 
+- What are characteristic sentence structures (CSS) generally used by generative AI? 
+- (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
 
 ## Dataset
 List the dataset(s) you want to use, and some ideas on how you expect to get, manage, process and enrich it/them. Show you've read the docs and are familiar with some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.:
