@@ -54,3 +54,10 @@ Final Deadline - May 22
 
 ## Documentation
 This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
+
+### Files in this repo
+- **`AI_ACCESS.md`** / **`AI_ACCESS.pdf`**: setup guide for calling Gemini through our shared Google Cloud project (`auc-text-mining-antithesis`). Each group member should follow these steps once before running anything that uses the Gemini API.
+- **`execution_plan.md`**: dependency-ordered plan for the AI-vs-human text classifier direction (proposed, not yet merged).
+- **`feature_candidates.md`**: candidate features for the classifier with literature pointers.
+- **`dataset_options.md`**: dataset choices, including a Hugging Face labeled corpus (HC3) and a time-split fallback.
+- **`notebook.ipynb`**: main project notebook (currently a placeholder).
