@@ -1,36 +1,36 @@
 # Project Readme
 
 ## Title
-Are we cooked: Sentence Structures in Human and AI Writing
+CHAT WE ARE SO FUCKING COOKED🤑: General text characteristics in Human and AI Writing
 
 ## Abstract
-The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain sentence structures are used more frequently since the widespread adoption of LLMs. Specifically, we will look at the antithesis, where in a single sentence two opposing ideas are introduced for a contrasting effect. Using the arXiv dataset, we will extract multiple scientific texts to determine if there is a correlation between the use of this antithesis structure and the increasing use of LLMs.
+The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain other characteristics have also increased. Specifically, we will look at the following X characteristics:
+- Average sentence length
+- Average word length
+- Number of nouns
+- Number of verbs
+With gender studies papers published between 2015-2020, we'll use LLM's to rewrite these papers and creata a generated counterpart. Between these two dataset we'll then analyse the evolution of these characterisitcs, highlighting correlations with AI use. 
 
 ## Research questions
-- Is there a correlation between the use of LLMs and the frequency of the antithesis is writing and speaking? 
-- Which scientific fields have seen a bigger increase in the use of the antithesis since the launch of LLMs? 
-- Which discourse types (news articles, reddit comments, scientific articles etc) have seen a bigger increase in the use of the antithesis? 
-- What are characteristic sentence structures (CSS) generally used by generative AI? 
+- How have the 4 characteristics changed over time in the field of gender studies?
+- Is there a correlation between the use of LLMs and the values of the 4 characteristics?    
 - (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
 
 ## Dataset
-We use the arXiv dataset, taking the full text of each paper. We focus on English papers from a few years before and after the ChatGPT release, sampled evenly across fields rather than using everything published. We will have to clean the text of irrelevant elements (ie latex formatting, page numbers, works cited, etc). From each paper we pull two things: vocabulary features (lemma frequencies, type-token ratios, and rates for a curated list of suspected AI-tell words like delve, tapestry, intricate and multifaceted) and construction features (a parser pass that flags the "it's not X, it's Y" family).
-
+We'll manually collect papers in the field of gender studies, being published between 2015-2020. Since these papers were published before the release and widespread use of generative AI, they serve as a good baseline for non-AI generated papers. We will be including the full texts of English papers withing the field of gender studies, of which we'll count the average sentence lenght, average word lenght, number of nouns, and number of verbs. Since we're rewriting the same papers using LLM's, we're able to make a straight comparison between the original and the generated papers, allowing for us to make clear correlations between AI use and the evolution of these characteristics.
 
 ## A Tentative List of Milestones
 Project Update 0 - April 14
 - Repository and README [Everyone]
 
 Project Update 1 - April 28
-- Decide on CSS/AI determining structures, based on literature [Melle]
-- Decide on model and have it tested on preliminary dataset [Wout]
+- Update README to newer goals, in relation to lack of antitheses found [Melle]
+- Write model fitting code [Wout]
 - Find final dataset [Jonathan]
 - Decides on tests run:
-- What time frame (Texts published from when to when)
-- What academic fields (Computer Science, Chemistry, Politics…)
-- What sources (Academic papers and from where)
-- What amount (& dataset breakdown: ie x papers separated into y academic fields and z years)
-- Data gathering and preprocessing pipeline [Melle]
+- Find 20 base sources [Lettie & Melle]
+- What amount (& dataset breakdown: ie x papers separated into y academic fields and z years) [Melle]
+- Create generated papers pipeline [Jonathan]
 
 Project Update 2 - May 8
 - Run models on the full dataset and gather results[Melle & Leticia]
