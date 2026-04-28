@@ -1,7 +1,7 @@
 # Project Readme
 
 ## Title
-CHAT WE ARE SO FUCKING COOKED🤑: General text characteristics in Human and AI Writing
+Are we cooked chat?: General text characteristics in Human and AI Writing
 
 ## Abstract
 The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain other characteristics have also increased. Specifically, we will look at the following 4 characteristics:
