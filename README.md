@@ -17,26 +17,36 @@ With gender studies papers published between 2015-2020, we'll use LLM's to rewri
 - (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
 
 ## Dataset
-We'll first manually collect papers in the field of gender studies, being published between 2015-2020, to gather some examples for the webscraper. Then we'll use this webscraper to generate the full data set of papers. Since all these papers were published before the release and widespread use of generative AI, they serve as a good baseline for non-AI generated papers. We will be including the full texts of English papers withing the field of gender studies, of which we'll count the average sentence lenght, average word length, number of nouns, and number of verbs. Since we're rewriting the same papers using LLM's, we're able to make a straight comparison between the original and the generated papers, allowing for us to make clear correlations between AI use and the evolution of these characteristics.
+we will use the PubMed API to download a large number of articles from 2010-2015. In this time period AI was not used for writing, so we know all of these articles are written by humans. The PubMed API allows us to get any amount of articles identifiers in that time range. And then we can use the same API to download the articles in XML format with a lot of metadata. For now we only care about the actual text in the articles, so we'll have to do some formatting and text extraction. 
+
+For our purposes it doesn't really matter if all of the articles are in the same field or not, so this approach will suffice. 
+
+## Features
+The model will look at a variety of features. Ideally we pick as many as possible to see which features carry most signal. Some featurse we can consider adding include:
+- Average sentence/word length
+- Number of nouns/verbs
+- Perplexity
+- Type/token ratio
+- Burstiness
+- Average parse tree depth
+- Hapax legomena ratio
+- Flesch-Kincaid / readability scores
+- Frequency of AI-words like "delve", "align" and "intricate"
 
 ## A Tentative List of Milestones
 Project Update 0 - April 14
 - Repository and README [Everyone]
 
 Project Update 1 - April 28
-- Update README to newer goals, in relation to lack of antitheses found [Melle]
+- Update README to new plan [Melle]
 - Write model fitting code [Wout]
-- Find final dataset [Jonathan]
-- Decides on tests run:
-- Find 20 base sources [Lettie & Melle]
-- What amount (& dataset breakdown: ie x papers separated into y academic fields and z years) [Melle]
-- Create generated papers pipeline [Jonathan]
+- Create pipeline to AI-ify papers [Jonathan]
 
 Project Update 2 - May 8
-- Have a webscraper to collect articles in the field of gender studies [Wout]
-- Have a full dataset of 1000 papers in genderstudies published between 2015-2020 and written in English [Melle]
-- Run models on the full dataset and gather results [Melle & Leticia]
-- Analyze results and create base for the report [Jonathan]
+- Have a script to download pubmed articles and extract the text
+- Collect dataset using script
+- Add a few more features to our training data
+- Analyze results and create base for the report
 
 Inclass Presentations - May 19/22
 - Presentation prepared [Everyone]
@@ -55,7 +65,6 @@ Final Deadline - May 22
 - Clean up the repository and the report
 
 ## Documentation
-This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
 
 - **`AI_ACCESS.pdf`**: setup guide for calling Gemini through our shared Google Cloud project.
 
