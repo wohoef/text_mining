@@ -1,0 +1,61 @@
+A standard Turing computation may be visualized as a time-like sequence of
+elementary read-write-move operations carried out by one or more “heads” on
+“tapes”. The sequence of actions is determined by the initial tape contents
+and by a finite Turing program. The specific choice of alphabet, operations
+and tapes may influence the time or space complexity of calculations; by the
+Church-Turing thesis, however, the associated notion of Turing computabil-
+ity is not affected. So we may assume that Turing machines act on tapes whose
+cells are indexed by the set ω (= N) of natural numbers 0, 1, . . . and contain 0’s
+or 1’s.
+
+An obvious generalization from the perspective of transfinite ordinal theory
+is to extend Turing calculations to tapes whose cells are indexed by the class
+Ord of all ordinal numbers. Calculations will become (infinite) sequences of ele-
+mentary tape operations indexed by ordinals which may be viewed as instances
+of time. For successor ordinals (or times) calculations will basically be defined
+as for standard Turing machines. At limit ordinals we define the tape contents,
+program states and head positions by appropriate limit operations which may
+be viewed as inferior limits.
+
+The corresponding notion of ordinal computability obviously extends Tur-
+ing computability. By the Church-Turing thesis many operations on natural
+numbers are ordinal computable. The ordinal arithmetical operations (addition,
+multiplication, exponentiation) and other basic operations on ordinals are also
+ordinal computable.
+Indeed, the recursive properties of the family of ordinal computable functions
+are so strong that the bounded truth predicate
+{(α, ϕ, ~x)|α ∈ Ord, ϕ an ∈ -formula, ~x ∈ Lα, Lα  ϕ(~x)}
+for G¨odel’s constructible hierarchy L = ⋃
+α∈Ord Lα is ordinal computable given
+some appropriate coding. As a corollary we obtain the main result characterizing
+ordinal computability:
+Theorem 1 A set x ⊆ Ord is ordinal computable from finitely many ordinal
+parameters if and only if x ∈ L.
+2
+The implication from left to right will be immediate from the set-theoretical
+absoluteness of ordinal computations. The converse requires a careful analysis of
+the iterative definition of the constructible hierarchy to show that the iteration
+can be carried out by an ordinal Turing machine.
+This theorem may be viewed as an analogue of the Church-Turing thesis:
+ordinal computability defines a natural and absolute class of sets, and it is stable
+with respect to technical variations in its definition.
+Theories of transfinite computations which extend Turing computability
+have been proposed and studied for some time. Higher recursion theory as
+described in the monograph [6] of Gerald Sacks culminates in E-recursion
+which defines a computational result {e}(x) for programs e built from basic set
+functions applied to arbitrary sets x. The relation of E-computability to con-
+structibility is analogous to the statement of Theorem 1. In computer science
+various infinitary machines like B¨uchi automata [1] have been defined yield-
+ing important applications. The novelty here is in keeping with the original
+Turing idea of reading and writing on an unrestricted tape while interpreting
+unrestrictedness in the widest sense as set-theoretical unboundedness.
+Our work was inspired by the infinite time Turing machines introduced by
+Joel D. Hamkins, Jeff Kidder and Andy Lewis [4]. Infinite time Turing
+machines use standard tapes indexed by natural numbers but allow infinite
+computation sequences. At limit times, tape contents are defined as inferior
+limits of previous contents. Inputs and outputs are characteristic functions on
+the set ω of all natural numbers and may thus be viewed as real numbers.
+The theory of infinite time Turing machines is naturally related to definability
+theory over the structure (R, . . .), i.e., to descriptive set theory. In the case of
+tapes of arbitrary ordinal length one is lead to consider a theory of arbitrarily
+iterated definitions, i.e., constructibility theory
