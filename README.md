@@ -1,19 +1,19 @@
 # Project Readme
 
 ## Title
-Generated or Not: General Text Characteristics in Human and AI Writing
+General Text Characteristics in Human and AI Writing
 
 ## Abstract
-The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain other characteristics have also increased. Specifically, we will look at the following 4 characteristics:
-- Average sentence length
-- Average word length
-- Number of nouns
-- Number of verbs
+The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain other characteristics have also increased. Some characteristics we will explore include:
+- Average sentence/word length
+- Number of nouns/verbs
+- Perplexity
+- Type/token ratio
+We will train a logistic regression model on these features. Then we use the coefficients of this model to determine the importance of each characteristic.
 With gender studies papers published between 2015-2020, we'll use LLM's to rewrite these papers and creata a generated counterpart. Between these two dataset we'll then analyse the evolution of these characterisitcs, highlighting correlations with AI use. We'll use a webscraper to collect the papers.
 
 ## Research questions
-- How have the 4 characteristics changed over time in the field of gender studies?
-- Is there a correlation between the use of LLMs and the values of the 4 characteristics?    
+- What characteristics of text are most indicative of it being AI-generated?
 - (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
 
 ## Dataset
@@ -57,4 +57,5 @@ Final Deadline - May 22
 ## Documentation
 This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
 
-- **`AI_ACCESS.pdf`**: setup guide for calling Gemini through our shared Google Cloud project (`auc-text-mining-antithesis`). Each group member should follow these steps once before running anything that uses the Gemini API.
+- **`AI_ACCESS.pdf`**: setup guide for calling Gemini through our shared Google Cloud project.
+
