@@ -54,3 +54,5 @@ Final Deadline - May 22
 
 ## Documentation
 This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
+
+- **`AI_ACCESS.pdf`**: setup guide for calling Gemini through our shared Google Cloud project (`auc-text-mining-antithesis`). Each group member should follow these steps once before running anything that uses the Gemini API.
