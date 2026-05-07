@@ -1,0 +1,21 @@
+
+BACKGROUND: During cancer the otherwise tightly controlled
+homeostasis of the extracellular matrix (ECM) is disturbed. The protein
+composition changes, the ECM stiffens and increased levels of proteases are
+secreted. The combination of these processes result in release of specific
+protein fragments (e.g. collagens) to the circulation, which when measured
+may reflect disease pathogenesis.OBJECTIVE: To investigate if biomarkers of protease-degraded
+collagen could differentiate ovarian and breast cancer patients from healthy
+controls when measured in serum.METHODS: The levels of markers reflecting MMP-degradation of type I
+(C1M), type III (C3M) and type IV (C4M, C4M12) collagen were assessed in
+serum from ovarian cancer patients (n= 10), breast cancer patients (n= 14) and
+healthy controls (n= 49) using validated ELISAs. The markers were compared
+using one way ANOVA and AUC was calculated.RESULTS: All markers were significantly elevated in serum from
+ovarian cancer patients (p< 0.0001) and breast cancer patients
+(p< 0.04-0.0001) compared to healthy controls. Furthermore, diagnostically
+the markers were able to differentiate ovarian (AUROC 90%-93%) and
+breast cancer patients (AUROC 76%-93%) from healthy controls, with C1M
+being the strongest differentiator of disease vs. controls.CONCLUSION: Four serum biomarkers reflecting altered MMP-mediated
+collagen turnover were able to differentiate ovarian and breast cancer
+patients from healthy controls.
+

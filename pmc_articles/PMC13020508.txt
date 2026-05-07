@@ -1,0 +1,17 @@
+OBJECTIVE: To analyze the expression profile of placental type
+alkaline phosphatase (PLAP), cancer antigen 125 (CA125), and human
+epididymis protein 4 (HE4) in serous ovarian cancer and to correlate their
+expression with the tumor aggressiveness and progression.METHODS: Retrospective study considering a tissue microarray of 82
+women affected by ovarian serous cancer. Protein expression was assessed by
+immunohistochemistry on ovarian serous cancer tissue samples.
+Immunohistochemical staining was semiquantitatively evaluated as H-score.RESULTS: Median H-score values were lower for PLAP, 1 (IQR 0-4)
+than CA125, 10 (IQR 6-12) or HE4, 8 (IQR 5-12). Even if PLAP was less
+expressed in the cells of serous ovarian cancer than CA125 or HE4 it was
+relatively more expressed in the fourth quartile of its H-score distribution
+among cases with low CA125 or HE4 expression. Furthermore, PLAP and HE4 high
+expression resulted to be significantly correlated with a better prognosis.CONCLUSIONS: PLAP could be an additional marker for early detection
+of serous ovarian carcinoma, together with the established CA125 and HE4. In
+addition, PLAP expression is correlated with prognosis, giving, in this way,
+an additional tool for improving treatment approach.
+
+

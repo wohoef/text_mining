@@ -1,0 +1,24 @@
+PURPOSE: Research on the mechanism of Bushen Jianpi decoction (BJD)
+for preventing and treating osteoporosis caused by aromatase inhibitors (AI)
+during treatment for breast cancer resection. METHODS: An
+ovariectomized mouse model was established using random division into 6
+groups: a sham ovariectomized group, a blank control group, a control group,
+an alendronate group, a BJD group, and a drug combination group. Mice breast
+cancer cell lines (4T1) were cultured and seeded into the armpits of 6
+groups of BALB/c mice. The mouse breast cancer postoperative model was built
+when resecting the tumor after 3 weeks following seeding tumor. After 1
+weeks, the 6 groups of mice were given different drugs. Then the following
+analyses were made: estradiol (E2) levels and alkaline phosphatase (ALP)
+levels in the serum; detection of in vitro bone density and calcium and bone
+phosphorus content; tumor pathology and immunohistochemistry detection.RESULTS: The results suggested that BJD decreased levels of ALP in
+ovariectomized mice, and there was a trend for improved bone loss. BJD
+strengthened the trend of alendronate to improve bone loss, improved bone
+density, bone calcium and phosphorous, and reduced ALP. BJD had a certain
+role on the promotion of the expression of estrogen receptors (ERs) in the
+relapse of the tumor tissue.CONCLUSIONS: Combined therapy with BJD
+and alendronate can act synergistically against osteoporosis, which was
+possibly related to a reduced bone conversion rate through inhibiting bone
+resorption. BJD may block the MAPK signal pathway in breast cancer cells,
+increasing the expression of ERs and making cancer cells sensitive to
+endocrine treatment.
+
