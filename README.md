@@ -74,10 +74,10 @@ Final Deadline - May 22
 - **[AI_ACCESS.md](https://github.com/wohoef/text_mining/blob/main/AI_ACCESS.md)**: Setup guide for calling Gemini through our shared Google Cloud project.
 - **[fetch_articles.py](https://github.com/wohoef/text_mining/blob/main/fetch_articles.py)**: Python script to automatically download PubMed articles as .txt using the API.
 - **[main.ipynb](https://github.com/wohoef/text_mining/blob/main/main.ipynb)**: Main notebook where the logistic regression model will be trained on the corresponding text features. The data is first prepped, model is trained, and then results are displayed as a confusion matrix. This is the main file where edits will happen when the model becomes more complex.
-- **[methodology_notes.md](https://github.com/wohoef/text_mining/blob/main/methodology_notes.md)**:
-- **[requirements.txt](https://github.com/wohoef/text_mining/blob/main/requirements.txt)**:
-- **[rewrite_papers.py](https://github.com/wohoef/text_mining/blob/main/rewrite_papers.py)**: 
+- **[methodology_notes.md](https://github.com/wohoef/text_mining/blob/main/methodology_notes.md)**: Notes on the corpus construction approach, alternatives we considered, and limitations of the chosen setup.
+- **[requirements.txt](https://github.com/wohoef/text_mining/blob/main/requirements.txt)**: Python dependencies required to run the code.
+- **[rewrite_papers.py](https://github.com/wohoef/text_mining/blob/main/rewrite_papers.py)**: Python script that uses the Gemini API to rewrite each human paper paragraph-by-paragraph, producing the AI dataset.
 - **[text_features.py](https://github.com/wohoef/text_mining/blob/main/text_features.py)**: Python script that contains the features that will be extracted from every article. Right now, there are only some basic features for testing purposes, but this will be edited soon to contain more complex and novel features.
-- **[ai_articles](https://github.com/wohoef/text_mining/tree/main/ai_articles)**:
-- **[human_articles](https://github.com/wohoef/text_mining/tree/main/human_articles)**:
+- **[ai_articles](https://github.com/wohoef/text_mining/tree/main/ai_articles)**: Folder containing the AI-generated papers, one .txt file per paper. Output of rewrite_papers.py.
+- **[human_articles](https://github.com/wohoef/text_mining/tree/main/human_articles)**: Folder containing the human-written PubMed papers, one .txt file per paper. Output of fetch_articles.py.
 
