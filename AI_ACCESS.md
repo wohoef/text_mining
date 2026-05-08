@@ -41,7 +41,7 @@ You're added to our shared Google Cloud project (`auc-text-mining-antithesis`) a
    )
    
    r = client.models.generate_content(
-       model="gemini-3-flash",
+       model="gemini-2.5-flash",
        contents="Reply with exactly: HELLO",
    )
    
@@ -53,6 +53,6 @@ You're added to our shared Google Cloud project (`auc-text-mining-antithesis`) a
 ## Notes
 
 - All calls bill against our shared 100 euro trial credits, so don't loop on huge inputs without telling the group.
-- Use `gemini-3-flash` for bulk runs, `gemini-3-pro` only for prompt design / QC.
+- Use `gemini-2.5-flash` for bulk runs, `gemini-2.5-pro` only for prompt design / QC.
 - Region is `europe-west4` (closest to NL).
 - No API keys needed, auth is via your Google login.
