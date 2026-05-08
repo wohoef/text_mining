@@ -30,7 +30,7 @@ date_range = "2000:2019"
 
 # Making a new directory to store the output
 # Folder containing .txt files with articles
-output_directory = "pmc_articles"
+output_directory = "human_articles"
 os.makedirs(output_directory, exist_ok=True)
 
 # Get the ids and get the content associated to the id
