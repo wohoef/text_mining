@@ -1,7 +1,7 @@
 # Project Readme
 
 ## Title
-General Text Characteristics in AI Writing
+General Text Characteristics in Artificial Intelligence (AI) Scientific Writing
 
 ## Abstract
 The introduction of Large Language Models (LLMs) has raised questions about their influence in human language. This influence can occur directly through users copying the output of an LLM, or indirectly through humans mirroring the language usage by LLMs. Current research focuses on analyzing the frequency of certain words like “delve” and “align”, given that LLMs use these disproportionately often. Going beyond this, in this research we will investigate whether, similarly to the increase of specific vocabulary, certain other characteristics have also increased. Some characteristics we will explore include:
@@ -9,20 +9,26 @@ The introduction of Large Language Models (LLMs) has raised questions about thei
 - Number of nouns/verbs
 - Perplexity
 - Type/token ratio
-We will train a logistic regression model on these features. Then we use the coefficients of this model to determine the importance of each characteristic.
-With gender studies papers published between 2015-2020, we'll use LLM's to rewrite these papers and creata a generated counterpart. Between these two dataset we'll then analyse the evolution of these characterisitcs, highlighting correlations with AI use. We'll use a webscraper to collect the papers.
+
+We will train a logistic regression model on these features. Using the coefficients obtained from this model, we will then determine the importance of each characteristic in correctly classifying a paper as AI or not.
+
+Our datasets consist of two subsets: a human-generated subset and an AI-generated subset. The human-generated subset will be derived from PubMed, where we will retrieve scientific papers published between 2000-2019. The AI-generated subset will be created by feeding the original human subset to the API of the Gemini LLM, and asking it to rewrite these papers in its own words, creating a dataset we are sure is fully AI-made. Using these two datasets, we will analyze the evolution of these characteristics, highlighting any correlations observed with AI use.
 
 ## Research questions
-- What characteristics of text are most indicative of it being AI-generated?
-- (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use.
+- What characteristics of text are most indicative of it being AI-generated in scientific papers?
+- (discussion) To what extent can the prevalence of “AI characteristic” vocabulary and sentence structures be used to detect AI use?
 
 ## Dataset
-we will use the PubMed API to download a large number of articles from 2010-2015. In this time period AI was not used for writing, so we know all of these articles are written by humans. The PubMed API allows us to get any amount of articles identifiers in that time range. And then we can use the same API to download the articles in XML format with a lot of metadata. For now we only care about the actual text in the articles, so we'll have to do some formatting and text extraction. 
+As mentioned in the abstract, our dataset consists of two subsets.
 
-For our purposes it doesn't really matter if all of the articles are in the same field or not, so this approach will suffice. 
+### Human-Generated Dataset
+This dataset will be obtained from downloading a large number of articles between 2000 - 2019. Since LLMs were not yet used during this period, this date range ensures that all articles are written solely by humans. These articles will be downloaded using the PubMed API which allows us to obtain any number of article identifiers during our defined time range. With these identifiers, the content of the articles can be extracted in XML format from which text can be filtered and extracted to output .txt files.
+
+### AI-Generated Dataset
+As no promising AI-generated scientific article text was found online, we decided to manually create this dataset ourselves. For the purposes of time efficiency, we set up a Geminini API, which will take the human-generated dataset and a prompt such as "Rewrite these articles in your own words", and output a new dataset which we call the AI-generated dataset. 
 
 ## Features
-The model will look at a variety of features. Ideally we pick as many as possible to see which features carry most signal. Some featurse we can consider adding include:
+The model will look at a variety of features. Ideally we pick as many as possible to see which features carry most signal. Some features we can consider adding include:
 - Average sentence/word length
 - Number of nouns/verbs
 - Perplexity
@@ -48,7 +54,7 @@ Project Update 2 - May 8
 - Add a few more features to our training data
 - Analyze results and create base for the report
 
-Inclass Presentations - May 19/22
+In-class Presentations - May 19/22
 - Presentation prepared [Everyone]
 - First draft of the report done
 - Abstract [Jonathan]
@@ -65,6 +71,11 @@ Final Deadline - May 22
 - Clean up the repository and the report
 
 ## Documentation
-
-- **`AI_ACCESS.pdf`**: setup guide for calling Gemini through our shared Google Cloud project.
+- **[AI_ACCESS.md](https://github.com/wohoef/text_mining/blob/main/AI_ACCESS.md)**: Setup guide for calling Gemini through our shared Google Cloud project.
+- **[fetch_articles.py](https://github.com/wohoef/text_mining/blob/main/fetch_articles.py)**: Python script to automatically download PubMed articles as .txt using the API.
+- **[main.ipynb](https://github.com/wohoef/text_mining/blob/main/main.ipynb)**:
+- **[methodology_notes.md](https://github.com/wohoef/text_mining/blob/main/methodology_notes.md)**:
+- **[requirements.txt](https://github.com/wohoef/text_mining/blob/main/requirements.txt)**:
+- **[rewrite_papers.py](https://github.com/wohoef/text_mining/blob/main/rewrite_papers.py)**:
+- **[text_features.py](https://github.com/wohoef/text_mining/blob/main/text_features.py)**:
 
