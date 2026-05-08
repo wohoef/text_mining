@@ -1,11 +1,12 @@
-"""Rewrite a directory of academic papers with Gemini, paper-by-paper.
+"""Rewrite a directory of academic papers with Gemini, paragraph-by-paragraph.
 
 Usage:
     python rewrite_papers.py --input-dir papers/human --output-dir papers/ai
 
-Each `*.txt` in `--input-dir` is sent to the model in one call, and the
-rewrite is written to a same-named file under `--output-dir`. Files that
-already have an output are skipped, so the script is resumable.
+Each paragraph is rewritten with the full paper passed as context, with a
+per-paragraph word-count target and a one-shot retry if the rewrite is too
+short. Files that already have an output are skipped, so the script is
+resumable.
 """
 
 from __future__ import annotations
@@ -26,28 +27,44 @@ LOCATION = "europe-west4"
 DEFAULT_MODEL = "gemini-2.5-flash"
 
 PROMPT = (
-    "Rewrite the academic paper below. Do not simply swap synonyms paragraph-by-paragraph; "
-    "instead, absorb the information and restructure the sentences and flow using your "
-    "natural, highly structured academic voice. \n"
-    "Constraints:\n"
-    "- Capture all data points, arguments, and nuances without omitting scientific details.\n"
-    "- Ensure the final word count is approximately equal to the original.\n"
-    "- Output plain text only, no markdown.\n\n"
-    "Original:\n\n{text}\n\nRewrite:"
+    "Rewrite the paragraph below from an academic paper. Restructure the sentences "
+    "and reorder the information; don't just swap synonyms. Don't introduce facts "
+    "not in the original. Output plain text, target ~{target_words} words.\n\n"
+    "Full paper for context:\n{full_paper}\n\n"
+    "Paragraph:\n{paragraph}\n\n"
+    "Rewrite:"
 )
 
 
-def rewrite_one(client: genai.Client, model: str, text: str) -> str:
-    response = client.models.generate_content(
-        model=model,
-        contents=PROMPT.format(text=text),
+def _call(client, model, prompt):
+    resp = client.models.generate_content(
+        model=model, contents=prompt,
         config=types.GenerateContentConfig(
-            temperature=0.0,
-            max_output_tokens=65536,
+            temperature=0.4, max_output_tokens=2048,
             thinking_config=types.ThinkingConfig(thinking_budget=0),
         ),
     )
-    return response.text or ""
+    return resp.text or ""
+
+
+def split_paragraphs(text):
+    abstract, _, body = text.partition("\n\n")
+    return [abstract] + [p for p in body.split("\n") if p.strip()]
+
+
+def rewrite_paragraph(client, model, full_paper, paragraph):
+    target = len(paragraph.split())
+    prompt = PROMPT.format(target_words=target, full_paper=full_paper, paragraph=paragraph)
+    text = _call(client, model, prompt)
+    if len(text.split()) < 0.85 * target:
+        text = _call(client, model, prompt + f"\n\nToo short, aim for ~{target} words.")
+    return " ".join(text.split())
+
+
+def rewrite_paper(client, model, text):
+    paras = split_paragraphs(text)
+    out = [rewrite_paragraph(client, model, text, p) for p in paras]
+    return out[0] + "\n\n" + "\n".join(out[1:])
 
 
 def main() -> int:
@@ -85,7 +102,7 @@ def main() -> int:
         print(f"rewriting {path.name} ({len(text)} chars)...", end=" ", flush=True)
         start = time.time()
         try:
-            rewrite = rewrite_one(client, args.model, text)
+            rewrite = rewrite_paper(client, args.model, text)
         except Exception as exc:
             print(f"FAILED: {exc}")
             continue
@@ -102,8 +119,8 @@ def main() -> int:
             "model": args.model,
             "project": PROJECT,
             "location": LOCATION,
-            "temperature": 0.0,
-            "max_output_tokens": 65536,
+            "temperature": 0.4,
+            "max_output_tokens": 2048,
             "thinking_budget": 0,
             "prompt": PROMPT,
             "input_dir": str(args.input_dir),
