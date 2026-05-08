@@ -1,9 +1,23 @@
 """
+This document serves as a way to automize the download of articles from an online database, particularly
+the PubMed (PMC) publicly available articles.
+
+The code is separated into various functions with their own functionalities explained within their docstring.
+However, the overall steps followed to obtain these articles is:
+
+1. Search for articles in the specified date range (2000 - 2019), and obtain their IDs.
+2. Using this ID, we obtain the article's full XML content via the API.
+3. The content is "filtered" so that only the abstract and paragraphs remain.
+4. From this text, the XML tags are removed to ensure that the output is clean text.
+5. The content of each article is then saved into a .txt file which will be used as input in the notebook.
+
 SOURCES
-1. https://docs.python.org/3/library/xml.etree.elementtree.html
-2. https://www.ncbi.nlm.nih.gov/books/NBK25499/
-3. https://lxml.de/tutorial.html
-4. https://www.ncbi.nlm.nih.gov/books/NBK25499/
+- https://docs.python.org/3/library/xml.etree.elementtree.html
+- https://www.ncbi.nlm.nih.gov/books/NBK25499/
+- https://lxml.de/tutorial.html
+- https://www.ncbi.nlm.nih.gov/books/NBK25499/
+- https://www.w3schools.com/python/python_file_write.asp
+- https://claude.ai/share/e7277672-2d81-46ac-965d-b01704ce3a05
 """
 import os
 import time
