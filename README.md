@@ -77,5 +77,7 @@ Final Deadline - May 22
 - **[methodology_notes.md](https://github.com/wohoef/text_mining/blob/main/methodology_notes.md)**:
 - **[requirements.txt](https://github.com/wohoef/text_mining/blob/main/requirements.txt)**:
 - **[rewrite_papers.py](https://github.com/wohoef/text_mining/blob/main/rewrite_papers.py)**: 
-- **[text_features.py](https://github.com/wohoef/text_mining/blob/main/text_features.py)**: Python script that contains the features that will be extracted from every article. Right now, there are only some basic features for testing purposes, but this will be edited soon to contain more complex and novel features. 
+- **[text_features.py](https://github.com/wohoef/text_mining/blob/main/text_features.py)**: Python script that contains the features that will be extracted from every article. Right now, there are only some basic features for testing purposes, but this will be edited soon to contain more complex and novel features.
+- **[ai_articles](https://github.com/wohoef/text_mining/tree/main/ai_articles)**:
+- **[human_articles](https://github.com/wohoef/text_mining/tree/main/human_articles)**:
 
