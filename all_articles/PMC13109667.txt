@@ -1,0 +1,327 @@
+To bilaterally control an nth-order teleoperation system modeled on state space, state convergence methodology provides an elegant way to design control gains through a solution of 3n + 1 equations. These design conditions are obtained by allowing the master–slave error to evolve as an autonomous system and then assigning the desired dynamic behavior to the slave and error systems. The controller, thus obtained, ensures the motion synchronization of master and slave systems with adjustable force reflection to the operator. Although simple to design and easy to implement, state convergence method suffers from its dependence on model parameters, and thus the performance of the controller may degrade in the presence of parametric uncertainties. To address this limitation, we propose to integrate an extended state observer in the existing state convergence architecture which will not only compensate the modeling inaccuracies by treating them as a disturbance but will also provide the estimates of the master and slave states. These estimated states are then used to construct the bilateral controller which is designed by following the method of state convergence. In this case, 2n + 2 additional design equations are required to be solved to fix the observer gains. To validate the proposed enhancement in the state convergence architecture, simulations and semi-real-time experiments are performed in MATLAB/Simulink environment on a single degree-of-freedom teleoperation system.
+
+A bilateral teleoperation system extends the human capability to perform a task at a distant location through the use of robotic devices. The task is initiated by the human operator by driving the master robotic system. The trajectory information of the master robotic system is then transmitted over a communication channel to the remote site where a slave robotic system is installed to perform the intended task. While executing the task, slave robotic system transmits environment-related information back to the master robotic system so that human operator remains aware of the events happening at the remote location. This bidirectional flow of information between the local and remote sites is necessary for the successful completion of the task. At the same time, this bilateral connection poses challenges for the designers due to the presence of time delays, system uncertainties, and bandwidth constraints.
+1
+
+
+The problem of time delay in bilateral teleoperation systems has been extensively addressed in the literature due to its negative effect on the stability of such systems. A class of control algorithms, known as passivity schemes, has emerged based on the concepts of transmission line theory which avoids the destabilization of bilateral teleoperation systems by encoding the system’s variables into wave-variables and transmitting them across the communication channel.
+2,3
+ The tuning of these wave-variable controllers for optimum performance is also discussed based on linear control theory.
+4
+ The over-dissipation phenomenon of the passivity controllers is also addressed and passivity observers are proposed to activate the passivity controllers upon the detection of active energy.
+5
+ To deal with system uncertainties, passivity schemes are combined with neural networks.
+6,7
+ Other popular techniques for bilateral teleoperation systems include H-∞ control,
+8,9
+ adaptive control,
+10
+–12
+ fuzzy model-based control,
+13
+ sliding mode control,
+14
+ model-mediated control,
+15
+–17
+ disturbance observer,
+18
+
+–21
+ and hybrid schemes.
+22
+–24
+ More recently, prescribed performance method is employed to guarantee the desired transient behavior of bilateral teleoperation systems.
+25,26
+
+
+State convergence is another novel method for contact motion of bilateral teleoperation systems.
+27
+–29
+ It models nth-order master and slave systems on state space and provides a systematic design procedure to establish the bilateral communication between these systems. The control gains of the scheme are obtained by solving 3n + 1 design equations which are the result of (1) transforming slave–master error into an autonomous system and (2) imposing the desired dynamic behavior to the slave and error systems. This model-based scheme is applicable to linear teleoperation systems having small constant time delay in the communication channel. To minimize the reliance of state convergence scheme on model parameters, this study proposes to employ disturbance observers for estimating the uncertainties in the master and slave systems by treating them as disturbances. The particular disturbance observer used here is known as extended state observer. The choice of this disturbance estimator over others is made due to the assumption of slowly varying disturbances.
+30
+
+
+
+–35
+ The estimated states are used to construct bilateral control law which is designed by following the method of state convergence such that the stability of the closed-loop teleoperation system is also ensured. The proposed scheme is finally validated in MATLAB/Simulink (version R2014a) environment on a single degree-of-freedom nonlinear time-delayed teleoperation system. It is important to mention that linear disturbance observers have been used by the researchers to control teleoperation systems in oblique coordinates
+19
+ and modal spaces.
+20
+ In addition, the use of nonlinear disturbance observers has also been reported.
+21
+ However, to the best of authors’ knowledge, disturbance observer-based state convergence scheme has not yet been discussed in the literature which has motivated us to perform this study. The proposal enhances the state convergence architecture in two ways: (1) extending the operation from linear to nonlinear systems and (2) estimation of master and slave systems’ states for use in bilateral laws.
+This article is structured as follows: State convergence architecture is reviewed in the second section. Proposed enhancement in state convergence architecture is explained in the third section. Results are presented in the fourth section, while conclusions are drawn in the fifth section.
+State convergence architecture,
+27
+ shown in Figure 1, establishes a bilateral connection between the master and slave systems which can be represented by nth-order linear differential equation and modeled on state space as
+where subscript “z” is to be replaced with “m” for the master system and with “s” for the slave system. Various matrix entries in equation (1) are given as
+Various parameters forming the state convergence architecture are defined as 
+Km=[km1km2⋯kmn]
+ is the feedback stabilizing controller for master system, 
+Ks=[ks1∗+keks2∗+be⋯ksn]
+ is the feedback stabilizing controller for the slave system which also includes the stiffness (ke
+) and damping (be
+) terms of the environment to counter the environmental force, 
+Rm=[kfkekfbe⋯0]
+ transfers the scaled effect of slave’s motion to the master system as the slave interacts with the environment where scaling is achieved through the force feedback gain (kf
+), 
+Rs=[rs1rs2⋯rsn]
+ transfers the effect of master’s motion to the slave system, and 
+G2
+ is the force transmission gain from the master to the slave system when the operator exerts a force (Fm
+) to move the master system. Of these parameters, 
+G2,Km,Ks,Rs
+ are unknown and found through a solution of 3n + 1 design conditions, as described in the study by Azorin et al.
+27
+
+
+State convergence scheme employs the model parameters in equation (2) for the design of control gains. In practice, parametric uncertainties cannot be avoided and may degrade the performance of the controller. The effect of these uncertainties has been numerically evaluated on the performance of the state convergence controller in the literature.
+28,29
+ It is found that the bilateral controller is quite robust to more than 50% variation in the model parameters. However, the effect of these parametric uncertainties has not been explicitly considered during the design phase of the scheme which has motivated us to perform this study. Note that operator and environmental force estimation will not be undertaken in this study.
+To deal with uncertainties, we propose an enhanced version of the state convergence architecture, shown in Figure 2, where extended state observers are used to estimate the uncertainties present in the master and slave systems. These observers also provide the estimates of the master and slave systems’ states. The disturbance and state estimates are then used to form the bilateral control law. We proceed by considering the following nonlinear model of the master (z = m) and slave (z = s) systems
+In equation (3), 
+fz
+ is considered to be completely unknown and will be estimated using the disturbance observer along with other system’s states. To this end, we first rewrite equation (3) by considering the disturbance 
+dz=fz
+ as an additional (n + 1)th-state
+Note the slight change of notation in equation (4) where subscript “e” is added to denote the extended system. Further, time derivative of the disturbance also appears in equation (10), that is, 
+hz=d˙z
+. Before further development, we write systems (3) and (4) in compact form as
+Considering the virtual extended system of equation (7), we construct the real extended observer as
+In equation (9), 
+x^ze
+ are the estimated states and 
+Lze
+ is the observer gain given as 
+Lze=[lze1lze2lze3⋯lzenlze(n+1)]T
+. Let us define the observer error for the master and slave system as
+Observer error dynamics can now be written using equations (7), (9), and (10) as
+We now construct the bilateral state convergence controller using estimated states as
+By plugging equations (12) and (13) in equation (5) and using equations (10) and (11) and noting 
+Bzbz=Ez
+, closed-loop augmented slave–master system is found to be
+where 
+A11a=As+BsKs
+, 
+A12a=BsRs
+, 
+A21a=BmRm
+, 
+A22a
+
+
+=Am+BmKm
+, 
+A11e=−(BsKs−Es)
+, 
+A12e=(TBsRs0)
+
+
+(Ame−LmeCme)−(BsRs0)
+, 
+A21e=(TBmRm0)(Ase−Lse
+
+
+Cse)−(BmRm0)
+, 
+A22e=−(BmKm−Em)
+, 
+A12t=TBsRs
+, 
+A21t=TBmRm
+, 
+A12h=(TBsRs0)Eme
+, 
+A21h=(TBmRm0)Ese
+, 
+B1=BsG2
+, and 
+B2=Bm
+. By pre-multiplying equation (14) with the inverse of matrix 
+[IA12t;A21tI]
+ and combining the resulting expression with the observer dynamics (11), we have
+where 
+A11=Ai1A11a+Ai2A21a
+, 
+A12=Ai1A12a+Ai2A22a
+, 
+A13=Ai1A11e+Ai2A21e
+, 
+A14=Ai1A12e+Ai2A22e
+, 
+A21=Ai3A11a+Ai4A12a
+, 
+A22=Ai3A12a+Ai4A22a
+, 
+A23=Ai3A11e+Ai4A21e
+, 
+A24=Ai3A12e+Ai4A22e
+, 
+A34=Ase−LseCse
+, 
+A44=Ame−LmeCme
+, 
+B11=Ai1B1+Ai2B2
+, 
+B21=Ai3B1+Ai4B2
+, 
+E11=Ai2A21h
+, 
+E12=Ai1A12h
+, 
+E21=Ai4A21h
+, 
+E22=Ai3A12h
+, 
+E31=Ese
+, 
+E42=Eme
+, 
+Ai1=I+A12tΞA21t
+, 
+Ai2=−A12tΞ
+, 
+Ai3=−ΞA21t
+, 
+Ai4=Ξ
+, 
+Ξ=(I−A21tA12t)−1
+. Following the method of state convergence, we replace the master system in equation (15) with the slave–master error system. To achieve this, we introduce the following linear transformation
+The time derivative of equation (16) in combination with equation (15) yields the following augmented system
+where 
+A∼11=A11+A12
+, 
+A∼12=−A12
+, 
+A∼13=A13
+, 
+A∼14=A14
+, 
+A∼21=A11−A21+A12−A22
+, 
+A∼22=−A12+A22
+, 
+A∼23=A13−A23
+, 
+A∼24=A14−A24
+, 
+A∼33=A33
+, 
+A∼44=A44
+, 
+B∼11=B11
+, 
+B∼21=B11−B21
+, 
+E∼11=E11
+, 
+E∼12=E12
+, 
+E∼21=E11−E21
+, 
+E∼22=E12−E22
+, 
+E∼31=E31
+, 
+E∼42=E42
+. By eliminating the effect of slave system’s states and operator’s force on the error system in equation (17), we obtain the following n + 1 design conditions
+Note that the effect of observers’ errors is ignored on the slave–master error system as fast dynamic behavior will be assigned to the observers. Further, effect of disturbance terms is not considered in the design phase which can be associated with slow varying nature of the disturbance.
+32
+–34
+ Now, by comparing the characteristic polynomial of the augmented system in equation (17) with the desired polynomials, we have
+In equation (19), 
+pi,qi,ri,wi
+ are coefficients of the desired polynomials for the slave, error, slave observer, and master observer systems, respectively. Equations (18) and (19) form together a set of 5n + 3 design conditions which can be solved to find 3n + 1 unknown controller gains 
+(G2,Km,Ks,Rs)
+ and 2n + 2 unknown observer 
+(Lse,Lme)
+ gains of the enhanced state convergence scheme.
+To validate the proposed disturbance observer-based state convergence controller, we perform simulations in MATLAB/Simulink environment by considering a single degree-of-freedom master and slave systems as 
+x˙z1=xz2
+, 
+x˙z2=fz(xz)+uz
+, 
+fz=−az1sin(xz1)−az2xz2+(bz−1)uz
+. Thus, we have the following model for the design phase
+We assume various parameters of the teleoperation system as 
+am1=1
+, 
+as1=0.5
+, 
+am2=7.1429
+, 
+as2=6.25
+, 
+bm=0.2656
+, 
+bs=0.2729
+, 
+T=0.2 s
+, 
+kf=1
+, 
+ke=20 N m/rad
+, and 
+be=0.1 N m s/rad
+
+
+27
+ Further, we select the coefficients of polynomials in equation (25) as 
+p0=20
+, 
+p1=15
+, 
+q0=64
+, 
+q1=16
+, 
+r0=w0=27,000
+, 
+r1=w1=2700
+, and 
+r2=w2=90
+. Now, by solving the design conditions (24) and (25), we obtain the controller and observer gains as
+Note that control gain 
+Ks
+ in equation (21) contains the environment information also, as pointed out in the “State convergence architecture” section. In the absence of such information, steady-state error will exist between the master and slave positions as the slave interacts with the environment. We now perform simulations of time-delayed nonlinear teleoperation system under the control gains of equation (21), and the results are depicted in Figure 3. It can be seen that disturbance is well-estimated by the observer, and slave is following the master system. In addition, environmental force is also reflected to the operator whose amount can be adjusted through the coefficient 
+p0
+.
+To show some advantage of the proposed scheme, a comparison has been made with a recently proposed tele-controller based on radial basis function neural network (RBFNN).
+36
+ For the sake of completeness, we mention the RBFNN-based control laws here
+Using different parameters of RBFNN controllers as 
+ηm=ηs=0.25
+, 
+δm=δm=0.05
+, 
+lm=ls=15
+, 
+km=ks=15
+, 
+τf=0.025
+, 
+sat=±0.05
+, 
+n=5
+, 
+bj=0.5
+, 
+Ci=−1:0.5:1
+, 
+Mr=1
+, 
+Cr=4
+, and 
+Gr=4
+, we simulate the same time-delayed tele-robotic system under the control of equation (22), and various states are recorded. Figure 4 depicts the position error between the master and slave systems as yielded by both the proposed and RBFNN controllers. It can be seen that the proposed controller offers better transient performance as compared to RBFNN controller for the same final master position. However, the proposed controller is only valid for the constant time delays.
+Finally, we perform some semi-real-time experiments in QUARC/Simulink (version v2.5.1062) environment using the geomagic haptic device. To this end, haptic device is operated along the x-axis to generate a time-varying force for the teleoperation system running in Simulink environment. This force is governed by the relation 
+Fm(t)=kop(xop(t)−x0)
+. Here, scaling factor is assumed to be 
+kop=5
+, while operator’s position 
+(xop)
+ lies in the range 
+[0.1,0.2]
+ which corresponds to the motion of the link between points “2” and “8” on the cardboard, as shown in Figure 5. Further, Simulink model is designed such that the reflected force, as generated by the proposed controller, is also directed to the haptic device. In this way, loop is closed around the operator as he will be able to feel the slave’s interaction with the environment. Now, using the control gains of equation (21), nonlinear time-delayed teleoperation system is run under the control of haptic device and the results are shown in Figure 6. It can be seen that observer has remained successful in estimating the disturbance, and observer-based controller has established the convergence of master and slave states. Further, environmental force is also felt by the operator. These results suggest that the proposed methodology has indeed enhanced the capability of state convergence architecture to deal with uncertain nonlinear teleoperation systems.
+This article has presented an enhancement in the state convergence architecture for bilateral teleoperation systems through the use of disturbance observers. The proposal suggests treating uncertainties in the master and slave systems as disturbances and employing extended state observers to estimate them. State convergence control laws are then updated with these estimates. Closed-loop stability of the teleoperation system is finally established by following the method of state convergence. To validate the proposal, simulations and semi-real-time experiments are also performed in MATLAB/Simulink environment by considering a single degree-of-freedom nonlinear time-delayed teleoperation system. Future work involves designing and integrating the operator and environment estimation laws in the proposed framework with the consideration of time-varying delays of the communication channel.

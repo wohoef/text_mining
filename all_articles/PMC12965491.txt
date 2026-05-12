@@ -1,0 +1,18 @@
+
+BACKGROUND: Colorectal cancer (CRC) is one of the most commonly
+diagnosed cancers, and novel effective treatments and diagnostic tools are
+urgently required.OBJECTIVE: The selection of appropriate targeting tumor-associated
+antigens (TAAs) is critical for immunotherapy. Therefore, we analyzed TAA
+expression levels and investigated their relationship with clinical factors
+in adjacent normal mucosa (ANM) and CRC tissue.METHODS: We obtained specimens of CRC primary tumors and matched
+ANM from 137 patients with CRC who underwent surgical resection. The mRNA
+levels of seven TAAs, Wilms' tumor gene (WT1), kinetochore associated-2
+(KNTC2), cell division cycle associated-1 (CDCA1), M phase phosphoprotein-1
+(MPHOSPH1), DEP domain-containing 1 (DEPDC1), 34-kDa translocase of the outer mitochondrial membrane (TOMM34) and ring finger protein-43 (RNF43), were analyzed using quantitative real-time reverse transcription-polymerase chain reaction, and their
+relationships with clinicopathological factors and the cell cycle were analyzed.RESULTS: The expression levels of all seven TAAs were significantly
+higher in CRC tissues than in ANM. Expression levels of WT1 in CRC tissues did
+not correlate with the cell cycle. Furthermore, WT1 expression in CRC tissues
+was significantly related to tumor progression, lymph node metastasis,
+distant metastasis and clinical stage.CONCLUSIONS: WT1 is a potential marker for prognosis and tumor
+progression in CRC.
+

@@ -1,0 +1,19 @@
+BACKGROUND: Although the development of novel diagnostic and
+treatment strategies concerning laryngeal cancer is highly intensive, the
+survival rate remains virtually unchanged. Small non-coding RNAs appear to
+be very promising biomarkers - and so remain the focus of extensive
+investigation in laryngeal cancer.OBJECTIVE: We examined the expression of five miRNA and five genes
+related to cancer whether they could be potential laryngeal cancer
+biomarkers.METHODS: We performed an analysis in 47 patients diagnosed with
+laryngeal cancer. The qPCR technique was used to investigate the expression
+profile.RESULTS: While miR-21-3p and miR-525-5p were found to be
+significantly up-regulated, miR-139-3p and miR-885-5p expression is lower in
+laryngeal cancer. Moreover, PIK3R1 and HACE1 were found to be also down-regulated.CONCLUSIONS: The change in miRNA expression is frequent than the
+expression of other tested genes. The expression of passenger strands such
+as miR-21-3p and miR-139-3p, which are rarely investigated, is also
+significantly affected in laryngeal cancer. While PIK3R1, HACE1, miR-139-3p, and
+miR-885-5p may act as tumor suppressor genes in the studied tumour type,
+miR-21-3p and miR-525-5p seem to have oncogenic properties. Our findings
+suggest that miR-885-5p and PIK3R1 are the best indicators for the classification
+of laryngeal cancer tissue and normal mucosa.
+
