@@ -30,7 +30,7 @@ date_range = "2000:2019"
 
 # Making a new directory to store the output
 # Folder containing .txt files with articles
-output_directory = "human_articles"
+output_directory = "all_articles"
 os.makedirs(output_directory, exist_ok=True)
 
 # Get the ids and get the content associated to the id
@@ -107,7 +107,7 @@ def parse_body(xml_tree):
     for section in body.iter():
 
         # Extract paragraph tags for each section
-        if section.tag == "p" and section.getparent().tag == "sec":
+        if section.tag == "p" and section.getparent().tag in ("sec", "body"):
             parts.append(clean_text(section))
 
     # Newline to separate paragraphs
@@ -135,8 +135,21 @@ def main():
     for i, pmcid in enumerate(pmcids, 1):
         xml = fetch_article_xml(pmcid)
         root = etree.fromstring(xml)
+
+        # Skip corrections, reviews, editorials etc, we only want research articles
+        article = root.find(".//article")
+        if article is None or article.get("article-type") != "research-article":
+            print(f"[{i}/{len(pmcids)}] PMC{pmcid} skipped: not a research article")
+            continue
+
         abstract = parse_abstract(root)
         body = parse_body(root)
+
+        # Skip papers where body parsing returned nothing (preformat-only or no body)
+        if not body.strip():
+            print(f"[{i}/{len(pmcids)}] PMC{pmcid} skipped: no body content")
+            continue
+
         text = format_article(abstract, body)
         write_to_file(text, os.path.join(output_directory, f"PMC{pmcid}.txt"))
 
