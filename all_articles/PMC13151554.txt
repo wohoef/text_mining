@@ -1,0 +1,166 @@
+AbstractIn accordance with Article 6 of Regulation (EC) No 396/2005, the evaluating Member State (EMS), Austria, compiled an application to modify the existing maximum residue level (MRL) for the active substance fluazifop‐P in pumpkins seeds. To accommodate for the intended use of fluazifop‐P, Austria proposed to set the MRL for pumpkin seed at the value of 5 mg/kg. Austria drafted an evaluation report in accordance with Article 8 of Regulation (EC) No 396/2005, which was submitted to the European Commission and forwarded to EFSA. According to EFSA, the data are sufficient to derive the MRL proposal of 5 mg/kg for the proposed use on pumpkin seeds. Adequate analytical enforcement methods are available to control the residues of fluazifop‐P on pumpkin seeds. Based on the risk assessment results, EFSA concludes that the proposed use of fluazifop‐P on pumpkin seeds will not result in a consumer exposure exceeding the toxicological reference values and therefore is unlikely to pose a consumer health risk.
+
+In accordance with Article 6 of Regulation (EC) No 396/2005, the evaluating Member State (EMS), Austria, compiled an application to modify the existing maximum residue level (MRL) for the active substance fluazifop‐P in pumpkin seeds. To accommodate for the intended use of fluazifop‐P, Austria proposed to set the MRL to the value of 5 mg/kg. Austria drafted an evaluation report in accordance with Article 8 of Regulation (EC) No 396/2005, which was submitted to the European Commission and forwarded to the European Food Safety Authority (EFSA) on 5 February 2016.
+EFSA bases its assessment on the evaluation report submitted by the EMS, the draft assessment report (DAR) and its additional reports prepared under Council Directive 91/414/EEC, the revised Commission review report, the conclusions on the peer review of the pesticide risk assessment (RA) of the active substance fluazifop‐P as well as previous EFSA reasoned opinions of which one opinion on the review of existing MRLs according to Article 12 (hereafter, Article 12 MRL review).
+The toxicological profile of fluazifop‐P was assessed in the framework of the peer review under Directive 91/414/EEC and the data were sufficient to derive an acceptable daily intake (ADI) of 0.01 mg/kg body weight (bw) per day and an acute reference dose (ARfD) of 0.017 mg/kg bw.
+The metabolism in primary crops has been studied in fruit, leafy, root and oilseeds/pulses crop groups following foliar applications and the residue definition (RD) for enforcement and RA were established as ‘sum of all constituent isomers of fluazifop, its esters and its conjugates expressed as fluazifop (sum of isomers)’. For the use on pumpkin seed, EFSA concludes that the metabolism of fluazifop‐P has been sufficiently addressed and that the RDs derived are applicable.
+EFSA concludes that the submitted supervised residue trials are sufficient to derive an MRL proposal of 5 mg/kg on pumpkin seeds. Adequate analytical enforcement methods are available to monitor fluazifop‐P residues on the commodity under consideration at the validated limit of quantification (LOQ) of 0.01–0.05 mg/kg.
+Processing studies were not submitted and are not required with regard to the low contribution of pumpkin seeds to the consumer intake. However, during the peer review several processing factors were derived for rapeseed that can be extrapolated to pumpkin seed.
+The occurrence of fluazifop‐P residues in rotational crops was investigated in the framework of the peer review and of the Article 12 MRL review. Based on the available information, it was concluded that the RD set for primary crops is applicable to rotational crops and that significant residue levels are unlikely to occur in succeeding crops, provided that the compound is used according to the proposed good agricultural practice (GAP). Residues of fluazifop‐P in commodities of animal origin were not assessed as pumpkin seeds are not fed to livestock.
+The consumer RA was performed with revision 2 of the EFSA Pesticide Residues Intake Model (PRIMo). No long‐term or acute consumer intake concerns were identified. For fluazifop‐P, the highest estimated chronic intake accounted for 42% of the ADI (World Health Organization (WHO) Cluster E). The contribution of residues in the crops under consideration to the total consumer exposure is insignificant (lower than 0.1% of the ADI) and the maximum acute exposure was calculated to be 12% of the ARfD.
+EFSA concludes that the proposed use of fluazifop‐P on pumpkin seeds will not result in a consumer exposure exceeding the toxicological reference values and therefore is unlikely to pose a health risk to consumers. EFSA proposes to amend the existing MRLs as reported in the summary table below.
+
+Code
+a
+
+Commodity
+
+Existing EU MRL (mg/kg)
+
+Proposed EU MRL
+c
+(mg/kg)
+
+Comment/Justification
+
+Enforcement RD: Fluazifop‐P‐butyl (fluazifop acid (free and conjugates))0401100Pumpkin seeds10b
+5Extrapolation from NEU rapeseed trialsEU: European Union; MRL: maximum residue level; NEU: northern Europe Union; RD: residue definition.aCommodity code number according to Annex I of Regulation (EC) No 396/2005.bCurrent MRL is 10 mg/kg, meanwhile a decrease of the MRL to the limit of quantification (LOQ) of 0.01 mg/kg has been voted for approval (Health and Food Safety (SANTE) 11875/2015), but not yet implemented.cIndicates that the MRL is set at the limit of analytical quantification.
+
+Regulation (EC) No 396/20051 (hereinafter referred to as ‘the Regulation’) establishes the rules governing the setting of pesticide maximum residue levels (MRLs) at European Union (EU) level. Article 6 of the Regulation lays down that any party having a legitimate interest or requesting an authorisation for the use of a plant protection product in accordance with Council Directive 91/414/EEC2 repealed by Regulation (EC) No 1107/20093 shall submit to the Member State (MS), when appropriate, an application to modify a MRL in accordance with the provisions of Article 7 of the Regulation.
+Austria, hereafter referred to as the evaluating Member State (EMS), compiled an application to modify the existing MRL for fluazifop‐P in pumpkin seeds. This application was notified to the European Commission and the European Food Safety Authority (EFSA) and was subsequently evaluated in accordance with Article 8 of the Regulation. After completion, the evaluation report was submitted to the European Commission and to EFSA on 5 February 2016.
+The application was included in the EFSA Register of Questions with the reference number EFSA‐Q‐2016‐00124 and the following subject:
+
+Fluazifop‐P – Modification of existing MRLs in pumpkin seeds.
+Austria proposed to set the MRL of fluazifop‐P in pumpkin seeds at the level of 5 mg/kg. Currently the MRL is 10 mg/kg, but in the meantime the MRL was proposed to be decreased to the level of 0.01 mg/kg under Health and Food Safety (SANTE) 11875/2015. Further clarifications/information were requested to the EMS on 25 February 2016 which were submitted on 9 March 2016 in the form of an updated evaluation report.
+EFSA proceeded with the assessment of the application and the evaluation report as required by Article 10 of the Regulation.
+In accordance with Article 10 of Regulation (EC) No 396/2005, EFSA shall, based on the evaluation report provided by the EMS, provide a reasoned opinion on the risks to the consumer associated with the application.
+The evaluation report submitted by the EMS (Austria, 2016) and the exposure calculations using the EFSA Pesticide Residues Intake Model (PRIMo) are considered as supporting documents to this reasoned opinion and, thus, are made publicly available.
+In accordance with Article 11 of the Regulation, the reasoned opinion shall be provided as soon as possible and at the latest within 3 months (which may be extended to 6 months if more detailed evaluations need to be carried out) from the date of receipt of the application. If EFSA requests supplementary information, the time limit laid down shall be suspended until that information has been provided.
+Fluazifop‐P is the International Organisation for Standardisation (ISO) common name for (R)‐2‐{4‐[5‐(trifluoromethyl)‐2‐pyridyloxy]phenoxy} propionic acid (International Union of Pure and Applied Chemistry (IUPAC)). Fluazifop‐P‐butyl, a variant ester of the active substance fluazifop‐P, was evaluated in the course of the peer review. Fluazifop‐P‐butyl controls post‐emergence grass weeds (graminaceous) in a wide range of broad‐leaved crops. The chemical structures of the active substance and its main metabolites are reported in Appendix B.
+Fluazifop‐P was evaluated in the framework of Directive 91/414/EEC with France designated as rapporteur Member State (RMS). Following the first peer review, which was carried out by EFSA, a decision on non‐inclusion of the active substance in Annex I to Directive 91/414/EEC was published by means of Commission Decision 2008/934/EC.4
+
+A resubmission application was subsequently made in accordance with the provisions laid down in Chapter III of Commission Regulation (EC) No 33/20085. Following this second peer review, which was carried out by EFSA, fluazifop‐P is deemed to have been approved under Regulation (EU) No 1107/20093 in accordance with Regulation (EU) No 540/2011. This decision was published by means of Commission Implementing Regulation (EU) No 788/20116, which entered into force on 1 January 2012. It was a specific provision of the approval that only use as an herbicide for orchards (basal application) with one application may be authorised. After amendment to the conditions of approval of the active substance, the restriction was lifted and other uses as an herbicide were authorised under Commission Implementing Regulation (EU) No 201/20137.
+The representative uses evaluated in the peer review were for a single foliar application on pome fruits, peas, beans, pulses, potatoes and rapeseeds. The draft assessment report (DAR) of fluazifop‐P and its additional reports have been peer reviewed by EFSA (EFSA, 2010, 2012).
+The EU MRLs for fluazifop‐P are established in Annexes IIIA of Regulation (EC) No 396/2005. As the entry into force of this regulation, EFSA has issued one reasoned opinion on the modification of MRLs on various crops and one on the review of the existing MRLs for fluazifop‐P according to Article 12 MRL of Regulation (EC) No 396/2005 (hereafter, Article 12 MRL review). The proposals from these reasoned opinions have been considered in the preparation of EU legislation and they are summarised in Table 1.
+No codex maximum residue limits (CXLs) are established for fluazifop‐P.
+The details of the intended good agricultural practice (GAP) for fluazifop‐P are given in Appendix A.
+EFSA has based its assessment on the evaluation report submitted by the EMS (Austria, 2016), the draft assessment report (DAR) prepared under Council Directive 91/414/EEC (France, 2007), the final addendum and its additional report to the DAR (France, 2010), the final addendum to the additional report (France, 2012), the revised review report on fluazifop‐P (European Commission, 2013), the conclusions on the peer review of the pesticide risk assessment (RA) of the active substance fluazifop‐P (EFSA, 2010, 2012) and the previous EFSA reasoned opinions on fluazifop‐P (EFSA, 2015a,b). The assessment is performed in accordance with the legal provisions of the Uniform Principles for the Evaluation and the Authorisation of Plant Protection Products adopted by Commission Regulation (EU) No 546/20118 and the currently applicable guidance documents relevant for the consumer RA of pesticide residues (European Commission, 1996, 1997a, 1997b, 1997c, 1997d, 1997e, 1997f, 1997g, 2000, 2010a,b, 2011, 2015; OECD, 2011).
+Analytical methods for the determination of fluazifop‐P residues in plant commodities were assessed during the peer review under Directive 91/414/EEC and under the Article 12 MRL review (EFSA, 2012, 2015b).
+A fully validated method using liquid chromatography–tandem mass spectrometry (LC‐MS/MS) detection (including an hydrolysis step) for determination of fluazifop‐P, its esters and conjugates with an limit of quantification (LOQ) of 0.01 mg/kg in high acid, high water, high oil content matrices and in dry commodities was submitted during the MRL review (EFSA, 2015b). Additional methods using high‐performance liquid chromatography–tandem mass spectrometry (HPLC–MS/MS), high‐performance liquid chromatography‐ultraviolet detector (HPLC‐UV) and gas chromatography–mass spectrometry (GC–MS) detection were reported under the peer review for the determination of fluazifop‐P in non‐oily and oily commodities, with an LOQ of 0.01–0.05 mg/kg (EFSA, 2012).
+Pumpkin seeds belong to the high oil content group; therefore, EFSA concludes that sufficiently validated analytical methods are available to control fluazifop‐P in this crop.
+Analytical methods for the determination of residues in food of animal origin are not assessed in the current application as pumpkin seeds are not fed to livestock.
+The toxicological profile of the active substance fluazifop‐P was assessed in the framework of the peer review (EFSA, 2012) and data were sufficient to derive toxicological reference values, compiled in Table 2. The compound X observed during the rotational metabolism studies of fluazifop‐P was considered not of toxicology relevance (EFSA, 2015b).
+The metabolism of fluazifop‐P in primary crops was evaluated in the framework of the peer review (EFSA, 2012) in fruit, root/tuber, leafy, cereals, and pulses/oilseed crop groups. An overview of the available metabolism studies is presented in Table 3.
+Based on these metabolism studies, the residue definitions (RDs) were proposed as ‘sum of all constituent isomers of fluazifop, its esters and its conjugates, expressed as fluazifop (sum of isomers)’ for monitoring and RA in the conclusion of the peer review (EFSA, 2012). The current RD set in Regulation (EC) No 396/2005 is expressed as follows: ‘fluazifop acid (free and conjugates)’.
+For the use on pumpkin seeds, EFSA concludes that the metabolism of fluazifop‐P is sufficiently addressed and the RDs for enforcement and RA agreed during the peer review and confirmed under the Article 12 MRL review are applicable.
+In support of the intended GAP, the applicant submitted 10 northern Europe (NEU) residue trials on rapeseeds conducted in Germany during the growing seasons 1983, 1993 and 1998. In most of the locations, two different formulations were conducted and only one value per location was taken for the MRL calculation. Three trials were disregarded since the application was made at the growth stages of mono‐ and dicotyledonous plants (BBCH) 50, while the application for the intended GAP is proposed up to BBCH 21 only. In addition, all trials were overdosed as they were conducted at application rates of 375 and 750 g/ha; therefore, the proportionality approach was applied to scale the residue levels to the nominal application rate of 250 g/ha.
+Finally, an MRL proposal of 5 mg/kg is derived from a total of seven residue trials conducted with an application rate of 375 g/ha, applying the scaling factor of 0.67. As proposed by the applicant and considering the EU guideline 7525/VI/95 (European Commission, 2015), this MRL is extrapolated to pumpkin seeds.
+The results of the residue trials, the related RA input values (highest residue, median residue) and the MRL proposals are summarised in Table 4.
+The stability of fluazifop‐P‐butyl residues in plant matrices under storage conditions prior to analysis was assessed during the peer review and they were found to be stable at ≤ −18°C for 28 months in high water content, and for 18 months in high oil content and dry commodities (EFSA, 2015b). As the trial samples were stored for a maximum period of 17 months under conditions for which integrity of the samples was demonstrated, it is concluded that the residue data are valid with regard to storage stability (Austria, 2016).
+According to the EMS, the analytical methods used to analyse the residue trial samples have been sufficiently validated and was proven to be fit for purpose (Austria, 2016).
+EFSA concludes that data are sufficient to derive an MRL proposal of 5 mg/kg for pumpkin seeds in NEU (extrapolation from trial on rapeseeds)
+Standard hydrolysis studies simulating the effect on the nature of fluazifop‐P residues under processing conditions of pasteurisation, boiling and sterilisation were not provided and are not available. However, during the Article 12 MRL review, considering that under the severe hydrolytic conditions used in the analytical methods for enforcement and conjugates and esters of fluazifop do not hydrolyse beyond the stable fluazifop moiety itself, it was concluded that the active substance is stable under hydrolysis conditions, and therefore that the submission of standard hydrolysis studies is not required (EFSA, 2015b).
+Specific studies to assess the magnitude of fluazifop‐P residues during the processing of oil seed rape (rapeseed cake and crude/refined oil) that can be extrapolated to pumpkin seed were assessed during the peer review where several processing factors (PFs) were proposed (EFSA, 2012). New studies were not provided under this application and they are not required.
+As pumpkins could be grown in rotation, the impact of the residues on succeeding crops have to be investigated. Studies on the nature of fluazifop‐P residues in rotational crops were assessed in the framework of the peer review where fluazifop–P was intensively degraded and compound X, the main soil metabolite, was shown to be the predominant component of the residue in rotational crops, due to its uptake from the soil. As it was demonstrated that compound X was not of toxicological relevance, the RD for the rotational crops was set as for the primary crops (EFSA, 2015b).
+Rotational crop field trials were submitted where wheat, lettuce and carrot were sown in rotation to oilseed rape treated at 375 g/ha, or on bare soils treated at 375–475 g/ha of fluazifop‐P‐butyl at plant back intervals of 1, 2, 4 and 6 months. Residue levels of total fluazifop and total compound X (free and conjugated) were below the LOQ in all crops, except carrot foliage where compound X amounted to 0.03–0.13 mg/kg (EFSA, 2015b). As the annual application rate for pumpkin seeds is limited to a maximum of 250 g/ha, EFSA concludes that residues are not expected to be present in rotational crops, provided that fluazifop‐P is applied according to the proposed GAPs.
+Pumpkin seed are not fed to livestock therefore, the nature and magnitude of fluazifop‐P residues in livestock is not assessed in the framework of this application (European Commission, 1996).
+The consumer RA was performed with revision 2 of the EFSA PRIMo. This exposure assessment model contains the relevant European food consumption data for different subgroups of the EU population9 (EFSA, 2007).
+In the framework of the Article 12 MRL review for fluazifop‐P, a comprehensive long‐term exposure assessment was performed taking into account the existing uses at the EU level (EFSA, 2015b). The food commodities, for which no uses were reported in the framework of the Article 12 review, were excluded from the exposure calculation, assuming that there is no use of fluazifop‐P on these crops. Some exceedances in the acute risk were identified and risk mitigation measures were recommended (scenario 2). EFSA considered the RA from scenario 2 to update the consumer RA using the median residue levels (supervised trials median residue (STMR)) for pumpkin seed (Table 4).
+The acute exposure assessment was performed only with regard to the pumpkin seeds assuming the consumption of a large portion of the food item as reported in the national food surveys and that this item contained residues at the highest residue (HR) level as observed in supervised field trials (Table 4). A variability factor accounting for the inhomogeneous distribution on the individual items consumed was included in the calculation, when required (EFSA, 2007).
+The input values used for the dietary exposure calculation are summarised in Table 5.
+The estimated exposure was then compared with the toxicological reference values derived for fluazifop‐P (Table 2). The results of the intake calculation using the EFSA PRIMo is a key supporting document and is made publicly available as a background document to this reasoned opinion.
+Under the assumption that the MRLs will be amended as proposed in the Article 12 review, long‐term consumer intake concerns were not identified for any of the European diets incorporated in the EFSA PRIMo. The highest calculated chronic intake calculated accounted for 42% of the ADI (WHO cluster E). The contribution of residues in pumpkin seed is insignificant, lower than 0.1% of the ADI (DE, child).
+An acute consumer risk was not identified in relation to the MRL proposal for pumpkin seeds. The highest acute consumer exposure was calculated to be 12% of the ARfD (DE, diet).
+EFSA concludes that the intended use of fluazifop‐P on pumpkin seeds will not result in a consumer exposure exceeding the toxicological reference values and therefore is unlikely to pose a concern for the consumers.
+The information submitted was sufficient to propose the MRL summarised in the table below:
+
+Code
+a
+
+Commodity
+
+Existing EU MRL (mg/kg)
+
+Proposed EU MRL
+c
+(mg/kg)
+
+Comment/justification
+
+Enforcement RD: Fluazifop‐P‐butyl (fluazifop acid (free and conjugates))0401100Pumpkin seeds10b
+5Extrapolation from NEU rapeseed trialsEU: European Union; MRL: maximum residue level; NEU: northern Europe Union; RD: residue definitionaCommodity code number according to Annex I of Regulation (EC) No 396/2005.bCurrent MRL is 10 mg/kg, meanwhile a decrease of the MRL to the limit of quantification (LOQ) of 0.01 mg/kg has been voted for approval (Health and Food Safety (SANTE) 11875/2015), but not yet implemented.cIndicates that the MRL is set at the limit of analytical quantification.
+
+
+a.s.active substanceADIacceptable daily intakeARfDacute reference doseBBCHgrowth stages of mono‐ and dicotyledonous plantsbwbody weightcGAPCode of Good Agricultural PracticeCXLCodex maximum residue limitDARdraft assessment reportDATdays after treatmentEMSevaluating Member StateFAOFood and Agriculture Organization of the United NationsGAPgood agricultural practiceGC–MSgas chromatography–mass spectrometryGEMSGlobal Environment Monitoring SystemHPLChigh‐performance liquid chromatographyHRhighest residueISOInternational Organisation for StandardisationIUPACInternational Union of Pure and Applied ChemistryLCliquid chromatographyLOQlimit of quantificationMRLmaximum residue levelMSMember StatesMS/MStandem mass spectrometry detectorNEUnorthern EuropeOECDOrganisation for Economic Co‐operation and DevelopmentPFprocessing factorPHIpreharvest intervalPRIMo(EFSA) Pesticide Residues Intake ModelRArisk assessmentRDresidue definitionRMSrapporteur Member StateSANTEHealth and Food SafetySTMRsupervised trials median residueUVultraviolet (detector)WHOWorld Health Organization
+
+
+
+Crop and/or situation
+
+MS or country
+
+F G or I
+a
+
+Product name
+
+Pests or group of pests controlled
+
+Preparation
+
+Application
+
+Application rate per treatment
+
+PHI (days)
+d
+
+Remarks
+
+Type
+b
+
+Conc. a.s.
+
+Method kind
+
+Growth stages and season
+c
+
+Number min–max
+
+Interval
+
+g/hL min–max
+
+Water L/ha min–max
+
+g/ha min–max
+Oil pumpkinAustria NEUFFusillade MAXAnnual monocotyledonous weeds except annual meadow‐grassEC107 g/LFoliar spray
+BBCH
+12–21
+131–63200–400125n.a.Austria NEUFFusillade MAX
+Agropyron repens
+EC107 g/LFoliar spray
+BBCH
+12–14
+163–125200–400250n.acGAPa.s.: active substance; BBCH: growth stages of mono‐ and dicotyledonous plants; cGAP: Code of Good Agricultural Practice; NEU: northern European Union; SEU: southern European Union; MS: Member State.aOutdoor or field use (F), greenhouse application (G) or indoor application (I).bCropLife International Technical Monograph no 2, 6th Edition. Revised May 2008. Catalogue of pesticide.cGrowth stage range from first to last treatment (BBCH Monograph, Growth Stages of Plants, 1997, Blackwell, ISBN 3‐8263‐3152‐4), including, where relevant, information on season at time of application.dPHI: minimum preharvest interval.
+
+
+
+Code/trivial name
+
+Chemical name
+
+Structural formula
+Fluazifop‐P(R)‐2‐{4‐[5‐(Trifluoromethyl)‐2‐pyridyloxy]phenoxy}propionic acid O=C(O)[C@@H](C)Oc1ccc(cc1)Oc2ccc(cn2)C(F)(F)F
+
+Fluazifop(RS)‐2‐{4‐[5‐(Trifluoromethyl)‐2‐pyridyloxy]phenoxy}propionic acid O=C(O)C(C)Oc1ccc(cc1)Oc2ccc(cn2)C(F)(F)F
+
+Fluazifop‐butylButyl (RS)‐2‐{4‐[5‐(trifluoromethyl)‐2 pyridyloxy]phenoxy}propionate O=C(OCCCC)C(C)Oc1ccc(cc1)Oc2ccc(cn2)C(F)(F)F
+
+Fluazifop‐P‐butylButyl (R)‐2‐{4‐[5‐(trifluoromethyl)‐2‐pyridyloxy]phenoxy}propionate
+
+Compound X5‐(Trifluoromethyl)‐2(1H)‐pyridinone
+
+
