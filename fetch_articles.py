@@ -38,14 +38,16 @@ esearch = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 efetch  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 
 # ------------------------------------------------
-def search_pmc(max_results):
+def search_pmc(max_results, retstart=0):
     """
     Search PMC and return a list of ids matching the date range.
+    retstart lets us page through results when filtering rejects some.
     """
     params = {
         "db": "pmc",
         "term": f"open access[filter] AND {date_range}[pdat]",
         "retmax": max_results,
+        "retstart": retstart,
         "retmode": "xml",
     }
 
@@ -130,33 +132,52 @@ def write_to_file(text, output_path):
 
 # ------------------------------------------------
 def main():
-    pmcids = search_pmc(article_number)
+    saved = 0
+    seen = set()
+    retstart = 0
 
-    for i, pmcid in enumerate(pmcids, 1):
-        xml = fetch_article_xml(pmcid)
-        root = etree.fromstring(xml)
+    # Keep fetching more pages until we have the target number of valid papers
+    while saved < article_number:
+        pmcids = search_pmc(article_number, retstart=retstart)
+        if not pmcids:
+            print("no more results from pubmed")
+            break
+        retstart += len(pmcids)
 
-        # Skip corrections, reviews, editorials etc, we only want research articles
-        article = root.find(".//article")
-        if article is None or article.get("article-type") != "research-article":
-            print(f"[{i}/{len(pmcids)}] PMC{pmcid} skipped: not a research article")
-            continue
+        for pmcid in pmcids:
+            if saved >= article_number:
+                break
+            if pmcid in seen:
+                continue
+            seen.add(pmcid)
 
-        abstract = parse_abstract(root)
-        body = parse_body(root)
+            xml = fetch_article_xml(pmcid)
+            root = etree.fromstring(xml)
 
-        # Skip papers where body parsing returned nothing (preformat-only or no body)
-        if not body.strip():
-            print(f"[{i}/{len(pmcids)}] PMC{pmcid} skipped: no body content")
-            continue
+            # Skip corrections, reviews, editorials etc, we only want research articles
+            article = root.find(".//article")
+            if article is None or article.get("article-type") != "research-article":
+                print(f"PMC{pmcid} skipped: not a research article")
+                continue
 
-        text = format_article(abstract, body)
-        write_to_file(text, os.path.join(output_directory, f"PMC{pmcid}.txt"))
+            abstract = parse_abstract(root)
+            body = parse_body(root)
 
-        print(f"[{i}/{len(pmcids)}] PMC{pmcid}")
+            # Skip papers where body parsing returned nothing
+            if not body.strip():
+                print(f"PMC{pmcid} skipped: no body content")
+                continue
 
-        # Limit of requests so we need to pause
-        time.sleep(0.4)
+            text = format_article(abstract, body)
+            write_to_file(text, os.path.join(output_directory, f"PMC{pmcid}.txt"))
+            saved += 1
+
+            print(f"[{saved}/{article_number}] PMC{pmcid}")
+
+            # Limit of requests so we need to pause
+            time.sleep(0.4)
+
+    print(f"\ndone: saved {saved}/{article_number} papers")
 
 if __name__ == "__main__":
     main()
