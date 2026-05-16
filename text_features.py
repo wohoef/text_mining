@@ -51,7 +51,8 @@ def type_token_ratio(x):
 # Feature 4
 def burstiness(x):
     """
-    Returns the burstiness of the list x. This means the variance of sentence lengths.
+    Returns the burstiness of the list x. We measure this as the coefficient
+    of the standard deviation of sentence lengths. 
     """
     lengths = [len(element) for element in x]
     mean = statistics.mean(lengths)
