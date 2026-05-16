@@ -1,4 +1,9 @@
 import statistics
+import spacy
+from nltk import Tree
+
+_nlp = spacy.load("en_core_web_sm")
+
 
 # ------------------------------------------------
 # Aux 1
@@ -75,6 +80,28 @@ def burstiness(x):
     return stdev / mean
 
 # ------------------------------------------------
+def _token_to_tree(token):
+    "Convert a spaCy token and its subtree into an NLTK Tree."    
+    return Tree(token.text, [_token_to_tree(child) for child in token.children])
+
+_depth_cache = {}
+
+def _sentence_depth(sentence):
+    key = tuple(sentence)
+    if key in _depth_cache:
+        return _depth_cache[key]
+    
+    doc = _nlp(" ".join(sentence))
+    sent = next(doc.sents)
+    tree = _token_to_tree(sent.root)
+    depth = tree.height()
+    _depth_cache[key] = depth
+    return depth
+
+def av_parse_tree_depth(x):
+    total = sum([_sentence_depth(sentence) for sentence in x])
+    return total / len(x)
+# ------------------------------------------------
 def extract_features(corpus, human):
     """
     Extracts features from the corpus using a sliding window of 5 sentences and returns 
@@ -97,6 +124,7 @@ def extract_features(corpus, human):
         sample.append(av_word_length(x)) # Average number of characters per word
         sample.append(type_token_ratio(x)) # Vocabulary uniqueness
         sample.append(burstiness(x)) # Variation in sentence lengths
+        sample.append(av_parse_tree_depth(x))
         X.append(sample)
     
     return X, Y
