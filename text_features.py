@@ -1,7 +1,5 @@
 import statistics
 
-"""
-"""
 # ------------------------------------------------
 # Aux 1
 def get_words(x):
@@ -14,6 +12,22 @@ def get_words(x):
             if word.isalpha():
                 words.append(word.lower())
     return words
+
+# ------------------------------------------------
+# Aux 2
+def sliding_window(l, n):
+    """
+    Slides a window of size n across list l, where each window is a list.
+    This allows us to have more training samples.
+    
+    Example for n=2:
+    ABCDE -> AB, BC, CD, DE
+    """
+    window = l[:n-1]
+    for e in l[n-1:]:
+        window.append(e)
+        yield window[::]
+        window.pop(0)
 
 # ------------------------------------------------
 # Feature 1
@@ -59,21 +73,6 @@ def burstiness(x):
     stdev = statistics.stdev(lengths)
 
     return stdev / mean
-
-# ------------------------------------------------
-def sliding_window(l, n):
-    """
-    Slides a window of size n across list l, where each window is a list.
-    This allows us to have more training samples.
-    
-    Example for n=2:
-    ABCDE -> AB, BC, CD, DE
-    """
-    window = l[:n-1]
-    for e in l[n-1:]:
-        window.append(e)
-        yield window[::]
-        window.pop(0)
 
 # ------------------------------------------------
 def extract_features(corpus, human):
