@@ -1,2 +1,5 @@
 scikit-learn
 numpy
+nltk
+matplotlib
+google-genai
