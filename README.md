@@ -79,5 +79,5 @@ Final Deadline - May 22
 - **[rewrite_papers.py](https://github.com/wohoef/text_mining/blob/main/rewrite_papers.py)**: Python script that uses the Gemini API to rewrite each human paper paragraph-by-paragraph, producing the AI dataset.
 - **[text_features.py](https://github.com/wohoef/text_mining/blob/main/text_features.py)**: Python script that contains the features that will be extracted from every article. Right now, there are only some basic features for testing purposes, but this will be edited soon to contain more complex and novel features.
 - **[ai_articles](https://github.com/wohoef/text_mining/tree/main/ai_articles)**: Folder containing the AI-generated papers, one .txt file per paper. Output of rewrite_papers.py.
-- **[human_articles](https://github.com/wohoef/text_mining/tree/main/human_articles)**: Folder containing the human-written PubMed papers, one .txt file per paper. Output of fetch_articles.py.
+- **[all_articles](https://github.com/wohoef/text_mining/tree/main/all_articles)**: Folder containing the human-written PubMed papers, one .txt file per paper. Output of fetch_articles.py.
 
