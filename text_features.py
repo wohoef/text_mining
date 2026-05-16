@@ -1,6 +1,5 @@
 import statistics
 import spacy
-from nltk import Tree
 
 _nlp = spacy.load("en_core_web_sm")
 
@@ -79,28 +78,40 @@ def burstiness(x):
 
     return stdev / mean
 
+
 # ------------------------------------------------
-def _token_to_tree(token):
-    "Convert a spaCy token and its subtree into an NLTK Tree."    
-    return Tree(token.text, [_token_to_tree(child) for child in token.children])
+# Feature 5
+def _token_depth(token):
+    """
+    Returns the depth of the subtree
+    """
+    children = list(token.children)
+    if len(children) == 0:
+        return 1
+    return 1 + max(_token_depth(child) for child in children)
 
 _depth_cache = {}
 
 def _sentence_depth(sentence):
+    """
+    Returns the parse tree depth of a sentence.
+    """
     key = tuple(sentence)
     if key in _depth_cache:
         return _depth_cache[key]
     
     doc = _nlp(" ".join(sentence))
     sent = next(doc.sents)
-    tree = _token_to_tree(sent.root)
-    depth = tree.height()
+    depth = _token_depth(sent.root)
     _depth_cache[key] = depth
     return depth
 
 def av_parse_tree_depth(x):
-    total = sum([_sentence_depth(sentence) for sentence in x])
-    return total / len(x)
+    """
+    Returns the average dependency parse tree depth.
+    """
+    return sum(_sentence_depth(sentence) for sentence in x) / len(x)
+
 # ------------------------------------------------
 def extract_features(corpus, human):
     """
