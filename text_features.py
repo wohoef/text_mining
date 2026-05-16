@@ -34,6 +34,16 @@ def sliding_window(l, n):
         window.pop(0)
 
 # ------------------------------------------------
+# Aux 3
+_doc_cache = {}
+
+def _get_doc(sentence):
+    key = tuple(sentence)
+    if key not in _doc_cache:
+        _doc_cache[key] = _nlp(" ".join(sentence))
+    return _doc_cache[key]
+
+# ------------------------------------------------
 # Feature 1
 def av_element_length(x):
     """
@@ -100,7 +110,7 @@ def _sentence_depth(sentence):
     if key in _depth_cache:
         return _depth_cache[key]
     
-    doc = _nlp(" ".join(sentence))
+    doc = _get_doc(sentence)
     sent = next(doc.sents)
     depth = _token_depth(sent.root)
     _depth_cache[key] = depth
@@ -111,6 +121,36 @@ def av_parse_tree_depth(x):
     Returns the average dependency parse tree depth.
     """
     return sum(_sentence_depth(sentence) for sentence in x) / len(x)
+
+# Feature 6 (multiple similar ones)
+_function_word_groups = {
+    "pron": ["PRON"],
+    "adp":  ["ADP"],
+    "det":  ["DET"],
+    "conj": ["CCONJ", "SCONJ"],
+    "aux":  ["AUX"],
+}
+
+def function_word_rates(x):
+    """
+    Returns a dict mapping each function word group to its rate
+    (function word count / number of tokens).
+    """
+    counts = {group: 0 for group in _function_word_groups}
+    total = 0
+    for sentence in x:
+        doc = _get_doc(sentence)
+        for token in doc:
+            if not token.is_alpha:
+                continue
+            total += 1
+            for group, tags in _function_word_groups.items():
+                if token.pos_ in tags:
+                    counts[group] += 1
+                    break
+    if total == 0:
+        return {group: 0.0 for group in _function_word_groups}
+    return {group: counts[group] / total for group in _function_word_groups}
 
 # ------------------------------------------------
 def extract_features(corpus, human):
@@ -136,6 +176,8 @@ def extract_features(corpus, human):
         sample.append(type_token_ratio(x)) # Vocabulary uniqueness
         sample.append(burstiness(x)) # Variation in sentence lengths
         sample.append(av_parse_tree_depth(x))
+        rates = function_word_rates(x)
+        sample += [rates[key] for key in rates]
         X.append(sample)
     
     return X, Y
