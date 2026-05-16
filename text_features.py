@@ -95,8 +95,8 @@ def extract_features(corpus, human):
         sample = []
         sample.append(av_element_length(x)) # Average number of words per sentence
         sample.append(av_word_length(x)) # Average number of characters per word
-        sample.append(type_token_ratio(passage)) # Vocabulary uniqueness
-        sample.append(burstiness(passage)) # Variation in sentence lengths
+        sample.append(type_token_ratio(x)) # Vocabulary uniqueness
+        sample.append(burstiness(x)) # Variation in sentence lengths
         X.append(sample)
     
     return X, Y
