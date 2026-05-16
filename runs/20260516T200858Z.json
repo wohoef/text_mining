@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "20260516T200858Z",
+  "models": [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite"
+  ],
+  "project": "auc-text-mining-antithesis",
+  "location": "europe-west4",
+  "temperature": 0.4,
+  "max_output_tokens": 2048,
+  "thinking_budget": 0,
+  "prompt": "Rewrite the paragraph below from the academic paper provided as cached context. Restructure the sentences and reorder the information; don't just swap synonyms. Don't introduce facts not in the original. Output plain text, target ~{target_words} words.\n\nParagraph:\n{paragraph}\n\nRewrite:",
+  "input_dir": "all_articles",
+  "output_dir": "ai_articles",
+  "papers": [
+    "PMC13109665.txt",
+    "PMC13109667.txt",
+    "PMC13109670.txt"
+  ],
+  "usage": {
+    "PMC13109665.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 808557,
+      "cached_tokens": 793293,
+      "output_tokens": 9775
+    },
+    "PMC13109667.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 171201,
+      "cached_tokens": 165057,
+      "output_tokens": 3207
+    },
+    "PMC13109670.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 656954,
+      "cached_tokens": 645438,
+      "output_tokens": 5523
+    }
+  }
+}
