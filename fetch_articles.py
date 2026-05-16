@@ -77,9 +77,10 @@ def fetch_article_xml(pmcid):
 # ------------------------------------------------
 def clean_text(element):
     """
-    Remove the XML tags.
+    Remove the XML tags and collapse whitespace, so inline elements like
+    <xref> citations don't end up on their own line.
     """
-    return "".join(element.itertext())
+    return " ".join("".join(element.itertext()).split())
 
 # ------------------------------------------------
 def parse_abstract(xml_tree):
@@ -166,6 +167,11 @@ def main():
             # Skip papers where body parsing returned nothing
             if not body.strip():
                 print(f"PMC{pmcid} skipped: no body content")
+                continue
+
+            # Skip papers without an abstract
+            if not abstract.strip():
+                print(f"PMC{pmcid} skipped: no abstract")
                 continue
 
             text = format_article(abstract, body)
