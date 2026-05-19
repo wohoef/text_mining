@@ -1,8 +1,60 @@
+from collections import Counter
 import statistics
 import spacy
 
 _nlp = spacy.load("en_core_web_sm")
 
+
+# AI-marker words based on literature
+AI_MARKER_WORDS = {
+    "align",
+    "aligned",
+    "aligning",
+    "aligns",
+    "crucial",
+    "crucially",
+    "delve",
+    "delved",
+    "delves",
+    "delving",
+    "excel",
+    "excelled",
+    "excelling",
+    "excels",
+    "finding",
+    "findings",
+    "garner",
+    "garnered",
+    "garnering",
+    "garners",
+    "grapple",
+    "grappled",
+    "grapples",
+    "grappling",
+    "intricate",
+    "intricately",
+    "meticulous",
+    "meticulously",
+    "notable",
+    "notably",
+    "offer",
+    "offered",
+    "offering",
+    "offers",
+    "pivotal",
+    "potential",
+    "potentials",
+    "realm",
+    "realms",
+    "showcase",
+    "showcased",
+    "showcases",
+    "showcasing",
+    "underscore",
+    "underscored",
+    "underscores",
+    "underscoring",
+}
 
 # ------------------------------------------------
 # Aux 1
@@ -23,7 +75,7 @@ def sliding_window(l, n):
     """
     Slides a window of size n across list l, where each window is a list.
     This allows us to have more training samples.
-    
+
     Example for n=2:
     ABCDE -> AB, BC, CD, DE
     """
@@ -80,7 +132,7 @@ def type_token_ratio(x):
 def burstiness(x):
     """
     Returns the burstiness of the list x. We measure this as the coefficient
-    of the standard deviation of sentence lengths. 
+    of the standard deviation of sentence lengths.
     """
     lengths = [len(element) for element in x]
     mean = statistics.mean(lengths)
@@ -109,7 +161,7 @@ def _sentence_depth(sentence):
     key = tuple(sentence)
     if key in _depth_cache:
         return _depth_cache[key]
-    
+
     doc = _get_doc(sentence)
     sent = next(doc.sents)
     depth = _token_depth(sent.root)
@@ -153,10 +205,71 @@ def function_word_rates(x):
     return {group: counts[group] / total for group in _function_word_groups}
 
 # ------------------------------------------------
-def extract_features(corpus, human):
+# Feature 7
+def ai_marker_word_rate(x):
     """
-    Extracts features from the corpus using a sliding window of 5 sentences and returns 
-    the features and the labels. Returns two lists: X and Y where X contains the features and 
+    Returns the proportion of words that belong to a fixed list of
+    AI-associated vocabulary.
+    """
+    words = get_words(x)
+    if len(words) == 0:
+        return 0.0
+
+    marker_count = sum(word in AI_MARKER_WORDS for word in words)
+    return marker_count / len(words)
+
+# ------------------------------------------------
+# Feature 8
+def learn_ai_excess_words(ai_corpus, human_corpus, top_n=50, min_count=3):
+    """
+    Learns words that are disproportionately common in AI text compared to
+    human text. This should be called only on the training corpus to avoid
+    leaking test-set information into the feature extraction step.
+    """
+    ai_counts = Counter()
+    human_counts = Counter()
+
+    for article in ai_corpus:
+        ai_counts.update(get_words(article))
+
+    for article in human_corpus:
+        human_counts.update(get_words(article))
+
+    ai_total = sum(ai_counts.values())
+    human_total = sum(human_counts.values())
+    vocabulary = set(ai_counts) | set(human_counts)
+    vocab_size = len(vocabulary)
+    scores = {}
+
+    for word in vocabulary:
+        total_count = ai_counts[word] + human_counts[word]
+        if total_count < min_count:
+            continue
+
+        ai_rate = (ai_counts[word] + 1) / (ai_total + vocab_size)
+        human_rate = (human_counts[word] + 1) / (human_total + vocab_size)
+        scores[word] = ai_rate / human_rate
+
+    top_words = sorted(scores, key=scores.get, reverse=True)[:top_n]
+    return set(top_words), scores
+
+def learned_ai_vocab_rate(x, ai_excess_words):
+    """
+    Returns the proportion of words that belong to a learned list of words
+    with excess usage in AI text.
+    """
+    words = get_words(x)
+    if len(words) == 0:
+        return 0.0
+
+    marker_count = sum(word in ai_excess_words for word in words)
+    return marker_count / len(words)
+
+# ------------------------------------------------
+def extract_features(corpus, human, ai_excess_words=None):
+    """
+    Extracts features from the corpus using a sliding window of 5 sentences and returns
+    the features and the labels. Returns two lists: X and Y where X contains the features and
     Y contains the labels for each 5-sentence list.
     """
     # raw_X will contain all the 5-sentence lists
@@ -176,8 +289,11 @@ def extract_features(corpus, human):
         sample.append(type_token_ratio(x)) # Vocabulary uniqueness
         sample.append(burstiness(x)) # Variation in sentence lengths
         sample.append(av_parse_tree_depth(x))
+        sample.append(ai_marker_word_rate(x))
+        if ai_excess_words is not None:
+            sample.append(learned_ai_vocab_rate(x, ai_excess_words))
         rates = function_word_rates(x)
         sample += [rates[key] for key in rates]
         X.append(sample)
-    
+
     return X, Y
