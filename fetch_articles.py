@@ -25,7 +25,7 @@ import requests
 from lxml import etree
 
 # How many articles we want and the dates we want them within
-article_number = 50
+article_number = 200
 date_range = "2000:2019"
 
 # Making a new directory to store the output
@@ -152,8 +152,19 @@ def main():
                 continue
             seen.add(pmcid)
 
+            # Skip if already saved locally so re-runs don't redownload existing papers
+            output_path = os.path.join(output_directory, f"PMC{pmcid}.txt")
+            if os.path.exists(output_path):
+                saved += 1
+                print(f"[{saved}/{article_number}] PMC{pmcid} (kept)")
+                continue
+
             xml = fetch_article_xml(pmcid)
-            root = etree.fromstring(xml)
+            try:
+                root = etree.fromstring(xml)
+            except etree.XMLSyntaxError:
+                print(f"PMC{pmcid} skipped: malformed XML response")
+                continue
 
             # Skip corrections, reviews, editorials etc, we only want research articles
             article = root.find(".//article")
@@ -175,6 +186,12 @@ def main():
                 continue
 
             text = format_article(abstract, body)
+
+            # Skip papers too long for the rewrite stage (Vertex TPM caps choke on huge papers)
+            if len(text) > 60_000:
+                print(f"PMC{pmcid} skipped: too long ({len(text)} chars)")
+                continue
+
             write_to_file(text, os.path.join(output_directory, f"PMC{pmcid}.txt"))
             saved += 1
 

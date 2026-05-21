@@ -1,0 +1,369 @@
+{
+  "timestamp_utc": "20260521T190144Z",
+  "models": [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite"
+  ],
+  "project": "auc-text-mining-antithesis",
+  "location": "europe-west4",
+  "temperature": 0.4,
+  "max_output_tokens": 2048,
+  "thinking_budget": 0,
+  "prompt": "Rewrite the paragraph below from the academic paper provided as cached context. Restructure the sentences and reorder the information; don't just swap synonyms. Don't introduce facts not in the original. Output plain text, target ~{target_words} words.\n\nParagraph:\n{paragraph}\n\nRewrite:",
+  "input_dir": "all_articles",
+  "output_dir": "ai_articles",
+  "papers": [
+    "PMC13047979.txt",
+    "PMC13048018.txt",
+    "PMC13048033.txt",
+    "PMC13048159.txt",
+    "PMC13048170.txt",
+    "PMC13048210.txt",
+    "PMC13088899.txt",
+    "PMC13088948.txt",
+    "PMC13181847.txt",
+    "PMC13182858.txt",
+    "PMC13186419.txt",
+    "PMC13189685.txt",
+    "PMC3223353.txt",
+    "PMC3268977.txt",
+    "PMC3268978.txt",
+    "PMC3306558.txt",
+    "PMC3306567.txt",
+    "PMC3306569.txt",
+    "PMC3308003.txt",
+    "PMC3396335.txt",
+    "PMC3396336.txt",
+    "PMC3396345.txt",
+    "PMC3656220.txt",
+    "PMC3777165.txt",
+    "PMC3921584.txt",
+    "PMC4251509.txt",
+    "PMC4251510.txt",
+    "PMC4255090.txt",
+    "PMC4386478.txt",
+    "PMC4412926.txt",
+    "PMC4445249.txt",
+    "PMC4445488.txt",
+    "PMC4555235.txt",
+    "PMC4602117.txt",
+    "PMC4653246.txt",
+    "PMC4820500.txt",
+    "PMC4972855.txt",
+    "PMC5121180.txt",
+    "PMC5217078.txt",
+    "PMC5537315.txt",
+    "PMC5763337.txt",
+    "PMC5859424.txt",
+    "PMC5951876.txt",
+    "PMC6105176.txt",
+    "PMC6153957.txt",
+    "PMC6153960.txt",
+    "PMC6244739.txt",
+    "PMC6472471.txt",
+    "PMC6774327.txt",
+    "PMC7319417.txt"
+  ],
+  "usage": {
+    "PMC13047979.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 186223,
+      "cached_tokens": 178304,
+      "output_tokens": 5761
+    },
+    "PMC13048018.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 37717,
+      "cached_tokens": 34672,
+      "output_tokens": 2014
+    },
+    "PMC13048033.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 58756,
+      "cached_tokens": 54604,
+      "output_tokens": 3012
+    },
+    "PMC13048159.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 67592,
+      "cached_tokens": 63320,
+      "output_tokens": 2930
+    },
+    "PMC13048170.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 48978,
+      "cached_tokens": 45373,
+      "output_tokens": 2377
+    },
+    "PMC13048210.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 94990,
+      "cached_tokens": 89694,
+      "output_tokens": 3626
+    },
+    "PMC13088899.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 1212415,
+      "cached_tokens": 1194749,
+      "output_tokens": 10614
+    },
+    "PMC13088948.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 154109,
+      "cached_tokens": 146850,
+      "output_tokens": 5300
+    },
+    "PMC13181847.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 42121,
+      "cached_tokens": 38896,
+      "output_tokens": 1940
+    },
+    "PMC13182858.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 98143,
+      "cached_tokens": 92568,
+      "output_tokens": 4129
+    },
+    "PMC13186419.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 444841,
+      "cached_tokens": 432720,
+      "output_tokens": 7692
+    },
+    "PMC13189685.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 148469,
+      "cached_tokens": 141425,
+      "output_tokens": 4989
+    },
+    "PMC3223353.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 368999,
+      "cached_tokens": 357669,
+      "output_tokens": 7384
+    },
+    "PMC3268977.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 216373,
+      "cached_tokens": 207948,
+      "output_tokens": 4906
+    },
+    "PMC3268978.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 270294,
+      "cached_tokens": 259476,
+      "output_tokens": 5321
+    },
+    "PMC3306558.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 111573,
+      "cached_tokens": 104994,
+      "output_tokens": 3899
+    },
+    "PMC3306567.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 130982,
+      "cached_tokens": 124464,
+      "output_tokens": 3888
+    },
+    "PMC3306569.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 127763,
+      "cached_tokens": 121044,
+      "output_tokens": 3750
+    },
+    "PMC3308003.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 386891,
+      "cached_tokens": 375777,
+      "output_tokens": 5133
+    },
+    "PMC3396335.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 87548,
+      "cached_tokens": 82175,
+      "output_tokens": 3353
+    },
+    "PMC3396336.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 171598,
+      "cached_tokens": 164025,
+      "output_tokens": 5039
+    },
+    "PMC3396345.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 182927,
+      "cached_tokens": 175276,
+      "output_tokens": 4747
+    },
+    "PMC3656220.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 225951,
+      "cached_tokens": 215925,
+      "output_tokens": 4823
+    },
+    "PMC3777165.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 217283,
+      "cached_tokens": 207844,
+      "output_tokens": 6118
+    },
+    "PMC3921584.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 334364,
+      "cached_tokens": 322245,
+      "output_tokens": 7529
+    },
+    "PMC4251509.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 351077,
+      "cached_tokens": 339430,
+      "output_tokens": 8643
+    },
+    "PMC4251510.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 511573,
+      "cached_tokens": 497816,
+      "output_tokens": 7899
+    },
+    "PMC4255090.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 131225,
+      "cached_tokens": 123920,
+      "output_tokens": 5108
+    },
+    "PMC4386478.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 556727,
+      "cached_tokens": 543672,
+      "output_tokens": 6958
+    },
+    "PMC4412926.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 344409,
+      "cached_tokens": 331979,
+      "output_tokens": 6548
+    },
+    "PMC4445249.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 166028,
+      "cached_tokens": 158112,
+      "output_tokens": 5062
+    },
+    "PMC4445488.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 160550,
+      "cached_tokens": 153218,
+      "output_tokens": 4384
+    },
+    "PMC4555235.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 173907,
+      "cached_tokens": 165176,
+      "output_tokens": 5562
+    },
+    "PMC4602117.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 118384,
+      "cached_tokens": 111204,
+      "output_tokens": 4201
+    },
+    "PMC4653246.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 279126,
+      "cached_tokens": 268739,
+      "output_tokens": 6146
+    },
+    "PMC4820500.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 390824,
+      "cached_tokens": 377553,
+      "output_tokens": 6657
+    },
+    "PMC4972855.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 254584,
+      "cached_tokens": 244300,
+      "output_tokens": 7810
+    },
+    "PMC5121180.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 146649,
+      "cached_tokens": 139828,
+      "output_tokens": 4071
+    },
+    "PMC5217078.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 490304,
+      "cached_tokens": 477696,
+      "output_tokens": 8385
+    },
+    "PMC5537315.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 128345,
+      "cached_tokens": 120326,
+      "output_tokens": 5992
+    },
+    "PMC5763337.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 310513,
+      "cached_tokens": 300168,
+      "output_tokens": 7231
+    },
+    "PMC5859424.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 53605,
+      "cached_tokens": 49742,
+      "output_tokens": 2506
+    },
+    "PMC5951876.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 155455,
+      "cached_tokens": 147532,
+      "output_tokens": 4787
+    },
+    "PMC6105176.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 244454,
+      "cached_tokens": 234279,
+      "output_tokens": 7036
+    },
+    "PMC6153957.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 283036,
+      "cached_tokens": 272736,
+      "output_tokens": 6744
+    },
+    "PMC6153960.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 191775,
+      "cached_tokens": 182270,
+      "output_tokens": 5828
+    },
+    "PMC6244739.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 173929,
+      "cached_tokens": 165198,
+      "output_tokens": 6054
+    },
+    "PMC6472471.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 508982,
+      "cached_tokens": 495650,
+      "output_tokens": 8790
+    },
+    "PMC6774327.txt": {
+      "model": "gemini-2.5-flash",
+      "prompt_tokens": 504048,
+      "cached_tokens": 491940,
+      "output_tokens": 7353
+    },
+    "PMC7319417.txt": {
+      "model": "gemini-2.5-flash-lite",
+      "prompt_tokens": 488459,
+      "cached_tokens": 475021,
+      "output_tokens": 7456
+    }
+  }
+}
