@@ -61,6 +61,8 @@ AI_MARKER_WORDS = {
 def get_words(x):
     """
     Returns a list of words from the list of sentences x.
+    This function classifies any string surrounded be spaces that contains only
+    alphabetical characters a word.
     """
     words = []
     for sentence in x:
@@ -87,6 +89,9 @@ def sliding_window(l, n):
 
 # ------------------------------------------------
 # Aux 3
+# Since the samples have a lot of overlap, we create a different doc
+# for each sentence, then we can reuse them accross samples to avoid
+# computing the same thing mutliple times.
 _doc_cache = {}
 
 def _get_doc(sentence):
@@ -145,7 +150,7 @@ def burstiness(x):
 # Feature 5
 def _token_depth(token):
     """
-    Returns the depth of the subtree
+    Returns the depth of the subtree. THis is a recurisve function
     """
     children = list(token.children)
     if len(children) == 0:
@@ -158,12 +163,15 @@ def _sentence_depth(sentence):
     """
     Returns the parse tree depth of a sentence.
     """
+    # Check we already computed for this sentence
     key = tuple(sentence)
     if key in _depth_cache:
         return _depth_cache[key]
 
     doc = _get_doc(sentence)
     sent = next(doc.sents)
+
+    # Compute the actual depth
     depth = _token_depth(sent.root)
     _depth_cache[key] = depth
     return depth
@@ -176,11 +184,11 @@ def av_parse_tree_depth(x):
 
 # Feature 6 (multiple similar ones)
 _function_word_groups = {
-    "pron": ["PRON"],
-    "adp":  ["ADP"],
-    "det":  ["DET"],
-    "conj": ["CCONJ", "SCONJ"],
-    "aux":  ["AUX"],
+    "pron": ["PRON"], # Pronounds
+    "adp":  ["ADP"], # Adpositions
+    "det":  ["DET"], # Determiners
+    "conj": ["CCONJ", "SCONJ"], # Conjunctions
+    "aux":  ["AUX"], # Auxiliary verbs
 }
 
 def function_word_rates(x):
