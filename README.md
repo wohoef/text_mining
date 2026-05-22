@@ -70,14 +70,23 @@ Final Deadline - May 22
 - Implement feedback to report and code
 - Clean up the repository and the report
 
-## Documentation
-- **[AI_ACCESS.md](https://github.com/wohoef/text_mining/blob/main/AI_ACCESS.md)**: Setup guide for calling Gemini through our shared Google Cloud project.
-- **[fetch_articles.py](https://github.com/wohoef/text_mining/blob/main/fetch_articles.py)**: Python script to automatically download PubMed articles as .txt using the API.
-- **[main.ipynb](https://github.com/wohoef/text_mining/blob/main/main.ipynb)**: Main notebook where the logistic regression model will be trained on the corresponding text features. The data is first prepped, model is trained, and then results are displayed as a confusion matrix. This is the main file where edits will happen when the model becomes more complex.
-- **[methodology_notes.md](https://github.com/wohoef/text_mining/blob/main/methodology_notes.md)**: Notes on the corpus construction approach, alternatives we considered, and limitations of the chosen setup.
-- **[requirements.txt](https://github.com/wohoef/text_mining/blob/main/requirements.txt)**: Python dependencies required to run the code.
-- **[rewrite_papers.py](https://github.com/wohoef/text_mining/blob/main/rewrite_papers.py)**: Python script that uses the Gemini API to rewrite each human paper paragraph-by-paragraph, producing the AI dataset.
-- **[text_features.py](https://github.com/wohoef/text_mining/blob/main/text_features.py)**: Python script that contains the features that will be extracted from every article. Right now, there are only some basic features for testing purposes, but this will be edited soon to contain more complex and novel features.
-- **[ai_articles](https://github.com/wohoef/text_mining/tree/main/ai_articles)**: Folder containing the AI-generated papers, one .txt file per paper. Output of rewrite_papers.py.
-- **[all_articles](https://github.com/wohoef/text_mining/tree/main/all_articles)**: Folder containing the human-written PubMed papers, one .txt file per paper. Output of fetch_articles.py.
+## Getting Started
+The project entry point is **`main.ipynb`**. It loads the human and AI corpora, extracts text features, trains the logistic regression model, and displays the results. To reproduce the corpus from scratch first run `scripts/fetch_articles.py` (downloads the human papers) and `scripts/rewrite_papers.py` (generates the AI rewrites); otherwise the `human_articles/` and `ai_articles/` folders already contain the dataset used in the report.
+
+Install dependencies with `pip install -r requirements.txt`.
+
+## Repository Structure
+- **`main.ipynb`**: Main notebook — data prep, feature extraction, logistic regression training, and results (confusion matrix and feature analysis).
+- **`model_comparison.ipynb`**: Compares logistic regression against XGBoost and HistGradientBoosting.
+- **`scripts/fetch_articles.py`**: Downloads PubMed articles (2000-2019) as .txt files via the API.
+- **`scripts/rewrite_papers.py`**: Rewrites each human paper paragraph-by-paragraph with the Gemini API to produce the AI dataset.
+- **`scripts/check_split.py`**: Verifies the paragraph splitter's output before bulk rewriting runs.
+- **`scripts/text_features.py`**: Extracts the text features used by the model.
+- **`scripts/model_functions.py`**: Corpus loading, AI-vocabulary learning, and dataset/group construction.
+- **`docs/gemini_api_guide.md`**: Setup guide for calling Gemini through the shared Google Cloud project.
+- **`docs/methodology_notes.md`**: Notes on corpus construction, alternatives considered, and limitations of the chosen setup.
+- **`requirements.txt`**: Python dependencies required to run the code.
+- **`human_articles/`**: Human-written PubMed papers, one .txt file per paper. Output of `fetch_articles.py`.
+- **`ai_articles/`**: AI-rewritten papers, one .txt file per paper. Output of `rewrite_papers.py`.
+- **`runs/`**: Run manifests logging the settings and token usage for each rewrite run.
 
