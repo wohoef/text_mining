@@ -4,7 +4,7 @@ Use this to sanity-check that no paper produces hundreds of micro-paragraphs
 or other anomalies before spending API budget on a bulk run.
 
 Usage:
-    python test_split.py --input-dir all_articles
+    python check_split.py --input-dir all_articles
 """
 
 import argparse
