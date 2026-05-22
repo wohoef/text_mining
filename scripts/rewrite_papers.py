@@ -46,7 +46,9 @@ PROMPT_INLINE = (
 )
 
 
+# ------------------------------------------------
 def _call(client, model, prompt, cache_name=None):
+    """Send one prompt to Gemini and return the rewritten text and token usage."""
     config = types.GenerateContentConfig(
         temperature=0.4, max_output_tokens=2048,
         thinking_config=types.ThinkingConfig(thinking_budget=0),
@@ -63,7 +65,10 @@ def _call(client, model, prompt, cache_name=None):
     return resp.text or "", stats
 
 
+# ------------------------------------------------
 def split_paragraphs(text):
+    """Split a paper into its abstract plus a list of body paragraphs."""
+    # Separate the abstract from the body
     abstract, _, body = text.partition("\n\n")
     paras = []
     for line in body.split("\n"):
@@ -79,6 +84,7 @@ def split_paragraphs(text):
     return [abstract] + paras
 
 
+# ------------------------------------------------
 def _make_cache(client, model, full_paper):
     """Create a cached context for the full paper. Returns cache name or None."""
     try:
@@ -99,13 +105,17 @@ def _make_cache(client, model, full_paper):
         return None
 
 
+# ------------------------------------------------
 def rewrite_paper(client, model, text):
+    """Rewrite every paragraph of one paper and return the text and token usage."""
+    # Split into paragraphs and cache the full paper as shared context
     paras = split_paragraphs(text)
     cache_name = _make_cache(client, model, text)
 
     out = []
     totals = {"prompt_tokens": 0, "cached_tokens": 0, "output_tokens": 0}
     try:
+        # Rewrite each paragraph, using its original length as the word target
         for p in paras:
             target = len(p.split())
             if cache_name:
@@ -118,6 +128,7 @@ def rewrite_paper(client, model, text):
             for k in totals:
                 totals[k] += stats[k]
     finally:
+        # Always delete the cache, even if a paragraph failed
         if cache_name:
             try:
                 client.caches.delete(name=cache_name)
@@ -127,7 +138,10 @@ def rewrite_paper(client, model, text):
     return out[0] + "\n\n" + "\n".join(out[1:]), totals
 
 
+# ------------------------------------------------
 def main() -> int:
+    """Rewrite every paper in the input directory and write a run manifest."""
+    # Read the input and output directories from the command line
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
@@ -141,6 +155,7 @@ def main() -> int:
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Collect the input papers
     inputs = sorted(args.input_dir.glob("*.txt"))
     if args.limit:
         inputs = inputs[: args.limit]
@@ -153,11 +168,13 @@ def main() -> int:
     processed: list[str] = []
     per_paper_usage: dict = {}
     for i, path in enumerate(inputs):
+        # Skip papers that already have an output (makes the script resumable)
         out_path = args.output_dir / path.name
         if out_path.exists():
             print(f"skip {path.name}: already done")
             continue
 
+        # Alternate models per paper for diversity
         model = MODELS[i % len(MODELS)]
         text = path.read_text()
         print(f"rewriting {path.name} ({len(text)} chars) with {model}...", end=" ", flush=True)
@@ -175,6 +192,7 @@ def main() -> int:
               f"in={totals['prompt_tokens']:,} (cached={cached_pct:.0f}%), "
               f"out={totals['output_tokens']:,}")
 
+    # Save a run manifest with the settings and per-paper token usage
     if processed:
         runs_dir = args.output_dir.parent / "runs"
         runs_dir.mkdir(parents=True, exist_ok=True)
