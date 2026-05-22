@@ -12,7 +12,7 @@ import random
 
 import nltk
 
-from text_features import extract_features, learn_ai_excess_words
+from scripts.text_features import extract_features, learn_ai_excess_words
 
 def load_corpus(folder):
     """

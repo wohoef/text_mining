@@ -10,7 +10,7 @@ Usage:
 import argparse
 from pathlib import Path
 
-from rewrite_papers import split_paragraphs  # own library
+from scripts.rewrite_papers import split_paragraphs  # own library
 
 
 # ------------------------------------------------
